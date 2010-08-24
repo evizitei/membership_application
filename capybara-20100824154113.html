@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Membership</title>
+  
+  <script src="/Users/ethanvizitei/Documents/git/Rails/membership/public/javascripts/prototype.js?1282678642" type="text/javascript"></script>
+<script src="/Users/ethanvizitei/Documents/git/Rails/membership/public/javascripts/effects.js?1282678642" type="text/javascript"></script>
+<script src="/Users/ethanvizitei/Documents/git/Rails/membership/public/javascripts/dragdrop.js?1282678642" type="text/javascript"></script>
+<script src="/Users/ethanvizitei/Documents/git/Rails/membership/public/javascripts/controls.js?1282678642" type="text/javascript"></script>
+<script src="/Users/ethanvizitei/Documents/git/Rails/membership/public/javascripts/rails.js?1282678642" type="text/javascript"></script>
+<script src="/Users/ethanvizitei/Documents/git/Rails/membership/public/javascripts/application.js?1282678642" type="text/javascript"></script>
+  
+</head>
+<body>
+
+<div id='header'>
+<img alt="Bcfd_logo" src="/Users/ethanvizitei/Documents/git/Rails/membership/public/images/bcfd_logo.png?1282680764" />
+<span>
+<h2>BOONE COUNTY FIRE PROTECTION DISTRICT</h2>
+<h3>2201 I-70 Dr NW - Columbia MO, 65202</h3>
+<h3>(573) 447 - 5000</h3>
+</span>
+<img alt="Bcfd_logo" src="/Users/ethanvizitei/Documents/git/Rails/membership/public/images/bcfd_logo.png?1282680764" />
+</div>
+<form accept-charset="UTF-8" action="/Users/ethanvizitei/Documents/git/Rails/membership/public/membership_applications" class="new_membership_application" id="new_membership_application" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+<div class='form_block' id='personal_information'>
+<div class='header'>
+<div class='main'>PERSONAL INFORMATION</div>
+<div class='sub'>as it appears on your SSN card</div>
+</div>
+<div class='form_row'>
+<div class='form_cell'>
+<label for="membership_application_last_name">Name (Last)</label>
+<input id="membership_application_last_name" name="membership_application[last_name]" size="30" type="text" />
+</div>
+<div class='form_cell'>
+<label for="membership_application_first_name">(First)</label>
+<input id="membership_application_first_name" name="membership_application[first_name]" size="30" type="text" />
+</div>
+<div class='form_cell'>
+<label for="membership_application_middle_initial">(M.I.)</label>
+<input id="membership_application_middle_initial" name="membership_application[middle_initial]" size="30" type="text" />
+</div>
+<div class='form_cell'>
+<label for="membership_application_social_security_number">Social Security Number</label>
+<input id="membership_application_social_security_number" name="membership_application[social_security_number]" size="30" type="text" />
+</div>
+</div>
+<div class='form_row'>
+<div class='form_cell'>
+<label for="membership_application_address">Address: (Street)</label>
+<input id="membership_application_address" name="membership_application[address]" size="30" type="text" />
+</div>
+<div class='form_cell'>
+<label for="membership_application_city">(City)</label>
+<input id="membership_application_city" name="membership_application[city]" size="30" type="text" />
+</div>
+<div class='form_cell'>
+<label for="membership_application_state">(State)</label>
+<input id="membership_application_state" name="membership_application[state]" size="30" type="text" />
+</div>
+<div class='form_cell'>
+<label for="membership_application_zip">(Zip)</label>
+<input id="membership_application_zip" name="membership_application[zip]" size="30" type="text" />
+</div>
+</div>
+<div class='form_row'>
+<div class='form_cell'>
+<label for="membership_application_phone_number">Telephone Number: (Primary)</label>
+<input id="membership_application_phone_number" name="membership_application[phone_number]" size="30" type="text" />
+</div>
+<div class='form_cell'>
+<label for="membership_application_phone_number_2">(Secondary)</label>
+<input id="membership_application_phone_number_2" name="membership_application[phone_number_2]" size="30" type="text" />
+</div>
+</div>
+<div class='form_row'>
+<div class='form_cell'>
+<label for="membership_application_email">E-mail:</label>
+<input id="membership_application_email" name="membership_application[email]" size="30" type="text" />
+</div>
+<div class='form_cell' id='work_contact'>
+<label for="membership_application_may_contact_at_work">May we contact you at work?</label>
+<input id="membership_application_may_contact_at_work_true" name="membership_application[may_contact_at_work]" type="radio" value="true" />
+Yes
+<input id="membership_application_may_contact_at_work_false" name="membership_application[may_contact_at_work]" type="radio" value="false" />
+No
+</div>
+</div>
+</div>
+<input name="commit" type="submit" value="Submit" />
+</form>
+
+
+</body>
+</html>

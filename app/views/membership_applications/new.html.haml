@@ -1,0 +1,56 @@
+#header
+  =image_tag "bcfd_logo.png"
+  %span
+    %h2 BOONE COUNTY FIRE PROTECTION DISTRICT
+    %h3 2201 I-70 Dr NW - Columbia MO, 65202
+    %h3 (573) 447 - 5000
+  =image_tag "bcfd_logo.png"
+=form_for @membership_application do |m|
+  #personal_information.form_block
+    .header 
+      .main PERSONAL INFORMATION
+      .sub as it appears on your SSN card
+    .form_row
+      .form_cell
+        =m.label :last_name,"Name (Last)"
+        =m.text_field :last_name
+      .form_cell
+        =m.label :first_name,"(First)"
+        =m.text_field :first_name
+      .form_cell
+        =m.label :middle_initial,"(M.I.)"
+        =m.text_field :middle_initial
+      .form_cell
+        =m.label :social_security_number,"Social Security Number"
+        =m.text_field :social_security_number
+    .form_row
+      .form_cell
+        =m.label :address,"Address: (Street)"
+        =m.text_field :address
+      .form_cell
+        =m.label :city,"(City)"
+        =m.text_field :city
+      .form_cell
+        =m.label :state,"(State)"
+        =m.text_field :state
+      .form_cell
+        =m.label :zip,"(Zip)"
+        =m.text_field :zip
+    .form_row
+      .form_cell
+        =m.label :phone_number,"Telephone Number: (Primary)"
+        =m.text_field :phone_number
+      .form_cell
+        =m.label :phone_number_2,"(Secondary)"
+        =m.text_field :phone_number_2
+    .form_row
+      .form_cell
+        =m.label :email,"E-mail:"
+        =m.text_field :email
+      #work_contact.form_cell
+        =m.label :may_contact_at_work,"May we contact you at work?"
+        =m.radio_button :may_contact_at_work,true
+        Yes
+        =m.radio_button :may_contact_at_work,false
+        No
+  =submit_tag "Submit"
