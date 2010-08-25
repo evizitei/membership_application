@@ -47,10 +47,46 @@
       .form_cell
         =m.label :email,"E-mail:"
         =m.text_field :email
-      #work_contact.form_cell
+      .form_cell
         =m.label :may_contact_at_work,"May we contact you at work?"
         =m.radio_button :may_contact_at_work,true
         Yes
         =m.radio_button :may_contact_at_work,false
         No
+    .form_row
+      .form_cell
+        =m.label :birth_date,"Date of Birth:"
+        =m.text_field :birth_date
+      .form_cell
+        =m.label :has_been_employed_under_alias,"Have you been employed under other names?"
+        =m.radio_button :has_been_employed_under_alias,true
+        Yes
+        =m.radio_button :has_been_employed_under_alias,false
+        No
+        =m.label :aliases,"List Name(s):"
+        =m.text_field :aliases
+    .form_row
+      .form_cell
+        =m.label :drivers_license_number,"Driver's License Number:"
+        =m.text_field :drivers_license_number
+        =m.label :drivers_license_state,"State:"
+        =m.text_field :drivers_license_state
+        =m.label :drivers_license_expiration_date,"Date of Expiration:"
+        =m.text_field :drivers_license_expiration_date
+    .form_row
+      .form_cell
+        Have you ever been convicted of a crime? 
+        =m.radio_button :has_crime_convictions,true
+        Yes
+        =m.radio_button :has_crime_convictions,false
+        No
+        If you answer “Yes”, give details in space provided showing (1) Date; (2) Charge; (3) Place; (4) Court; and (5) Action Taken; NOTE: Convictions or discharges do not necessarily disqualify you from employment. Each case will be considered fairly on its merits and after full consideration of the applicant’s views.
+        =m.text_area :crime_details
+        Have you ever received a traffic violation? 
+        =m.radio_button :has_traffic_violations,true
+        Yes
+        =m.radio_button :has_traffic_violations,false
+        No
+        If you answered “Yes”, explain:
+        =m.text_area :traffic_violations_details
   =submit_tag "Submit"
