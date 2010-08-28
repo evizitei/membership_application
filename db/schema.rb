@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100824195449) do
+ActiveRecord::Schema.define(:version => 20100826184750) do
 
   create_table "membership_applications", :force => true do |t|
     t.string   "last_name"
@@ -64,6 +64,21 @@ ActiveRecord::Schema.define(:version => 20100824195449) do
     t.date     "date_agreed_to_conditions"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "employer_name"
+    t.string   "employer_name_2"
+    t.string   "employer_name_3"
+    t.string   "employer_phone"
+    t.string   "employer_phone_2"
+    t.string   "employer_phone_3"
+    t.date     "employer_start"
+    t.date     "employer_start_2"
+    t.date     "employer_start_3"
+    t.date     "employer_stop"
+    t.date     "employer_stop_2"
+    t.date     "employer_stop_3"
+    t.text     "employer_exit_reason"
+    t.text     "employer_exit_reason_2"
+    t.text     "employer_exit_reason_3"
   end
 
 end

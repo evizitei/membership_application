@@ -89,4 +89,52 @@
         No
         If you answered “Yes”, explain:
         =m.text_area :traffic_violations_details
+  #employment_history.form_block
+    .header 
+      .main Employment History
+    .form_row
+      .form_cell
+        =m.label :employer_name,"Name of Employer:"
+        =m.text_field :employer_name
+      .form_cell
+        =m.label :employer_phone,"Phone:"
+        =m.text_field :employer_phone
+      .form_cell
+        =m.label :employer_start,"Start:"
+        =m.text_field :employer_start
+        =m.label :employer_stop,"Ending:"
+        =m.text_field :employer_stop
+      .form_cell
+        =m.label :employer_exit_reason,"Reason for Leaving:"
+        =m.text_area :employer_exit_reason
+    .form_row
+      .form_cell
+        =m.label :employer_name_2,"Name of Employer:"
+        =m.text_field :employer_name_2
+      .form_cell
+        =m.label :employer_phone_2,"Phone:"
+        =m.text_field :employer_phone_2
+      .form_cell
+        =m.label :employer_start_2,"Start:"
+        =m.text_field :employer_start_2
+        =m.label :employer_stop_2,"Ending:"
+        =m.text_field :employer_stop_2
+      .form_cell
+        =m.label :employer_exit_reason_2,"Reason for Leaving:"
+        =m.text_area :employer_exit_reason_2
+    .form_row
+      .form_cell
+        =m.label :employer_name_3,"Name of Employer:"
+        =m.text_field :employer_name_3
+      .form_cell
+        =m.label :employer_phone_3,"Phone:"
+        =m.text_field :employer_phone_3
+      .form_cell
+        =m.label :employer_start_3,"Start:"
+        =m.text_field :employer_start_3
+        =m.label :employer_stop_3,"Ending:"
+        =m.text_field :employer_stop_3
+      .form_cell
+        =m.label :employer_exit_reason_3,"Reason for Leaving:"
+        =m.text_area :employer_exit_reason_3
   =submit_tag "Submit"
