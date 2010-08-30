@@ -137,4 +137,22 @@
       .form_cell
         =m.label :employer_exit_reason_3,"Reason for Leaving:"
         =m.text_area :employer_exit_reason_3
+  #military.form_block
+    .header 
+      .main Military
+    .form_row
+      .form_cell
+        =m.label :military_branch,"Branch:"
+        =m.text_field :military_branch
+      .form_cell
+        =m.label :military_rank,"Rank at Discharge:"
+        =m.text_field :military_rank
+      .form_cell
+        =m.label :military_start_date,"Start Date:"
+        =m.text_field :military_start_date
+        =m.label :military_discharge_date,"Discharge Date:"
+        =m.text_field :military_discharge_date
+      .form_cell
+        =m.label :military_training,"Duties/Special Training:"
+        =m.text_area :military_training
   =submit_tag "Submit"
