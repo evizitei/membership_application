@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100826184750) do
+ActiveRecord::Schema.define(:version => 20100830234235) do
 
   create_table "membership_applications", :force => true do |t|
     t.string   "last_name"
@@ -79,6 +79,30 @@ ActiveRecord::Schema.define(:version => 20100826184750) do
     t.text     "employer_exit_reason"
     t.text     "employer_exit_reason_2"
     t.text     "employer_exit_reason_3"
+    t.string   "college_name"
+    t.string   "college_location"
+    t.date     "college_start_date"
+    t.date     "college_stop_date"
+    t.string   "college_units_completed"
+    t.string   "college_major"
+    t.string   "college_degree"
+    t.string   "college_year"
+    t.string   "college_name_2"
+    t.string   "college_location_2"
+    t.date     "college_start_date_2"
+    t.date     "college_stop_date_2"
+    t.string   "college_units_completed_2"
+    t.string   "college_major_2"
+    t.string   "college_degree_2"
+    t.string   "college_year_2"
+    t.string   "college_name_3"
+    t.string   "college_location_3"
+    t.date     "college_start_date_3"
+    t.date     "college_stop_date_3"
+    t.string   "college_units_completed_3"
+    t.string   "college_major_3"
+    t.string   "college_degree_3"
+    t.string   "college_year_3"
   end
 
 end

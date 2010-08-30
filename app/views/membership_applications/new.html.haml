@@ -172,4 +172,72 @@
         =m.text_field :high_school_graduation_date
         =m.label :high_school_ged_date,"Date of GED:"
         =m.text_field :high_school_ged_date
+  #college.form_block
+    .header
+      .main College/University
+    .form_row
+      .form_cell.column_name  
+        College/University
+        Attended/Location
+      .form_cell.column_name 
+        From Date
+      .form_cell.column_name 
+        To Date
+      .form_cell.column_name 
+        Units Completed
+      .form_cell.column_name 
+        Major
+      .form_cell.column_name 
+        Degree
+      .form_cell.column_name
+        Year
+    .form_row
+      .form_cell
+        =m.text_field :college_name
+        =m.text_field :college_location
+      .form_cell
+        =m.text_field :college_start_date
+      .form_cell
+        =m.text_field :college_stop_date
+      .form_cell
+        =m.text_field :college_units_completed
+      .form_cell
+        =m.text_field :college_major
+      .form_cell
+        =m.text_field :college_degree
+      .form_cell
+        =m.text_field :college_year
+    .form_row
+      .form_cell
+        =m.text_field :college_name_2
+        =m.text_field :college_location_2
+      .form_cell
+        =m.text_field :college_start_date_2
+      .form_cell
+        =m.text_field :college_stop_date_2
+      .form_cell
+        =m.text_field :college_units_completed_2
+      .form_cell
+        =m.text_field :college_major_2
+      .form_cell
+        =m.text_field :college_degree_2
+      .form_cell
+        =m.text_field :college_year_2
+    .form_row
+      .form_cell
+        =m.text_field :college_name_3
+        =m.text_field :college_location_3
+      .form_cell
+        =m.text_field :college_start_date_3
+      .form_cell
+        =m.text_field :college_stop_date_3
+      .form_cell
+        =m.text_field :college_units_completed_3
+      .form_cell
+        =m.text_field :college_major_3
+      .form_cell
+        =m.text_field :college_degree_3
+      .form_cell
+        =m.text_field :college_year_3
+                
   =submit_tag "Submit"
