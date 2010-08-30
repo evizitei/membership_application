@@ -155,4 +155,21 @@
       .form_cell
         =m.label :military_training,"Duties/Special Training:"
         =m.text_area :military_training
+  #high_school.form_block
+    .header 
+      .main High School
+    .form_row
+      .form_cell
+        =m.label :high_school_name,"Name:"
+        =m.text_field :high_school_name
+      .form_cell
+        =m.label :high_school_city,"City:"
+        =m.text_field :high_school_city
+        =m.label :high_school_state,"State:"
+        =m.text_field :high_school_state
+      .form_cell
+        =m.label :high_school_graduation_date,"Date Graduated:"
+        =m.text_field :high_school_graduation_date
+        =m.label :high_school_ged_date,"Date of GED:"
+        =m.text_field :high_school_ged_date
   =submit_tag "Submit"
