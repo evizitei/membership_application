@@ -239,5 +239,82 @@
         =m.text_field :college_degree_3
       .form_cell
         =m.text_field :college_year_3
-                
+  #training.form_block
+    .header
+      .main Special Training
+    .form_row
+      .form_cell.column_name  
+        Institution - Business or Trade School
+      .form_cell.column_name 
+        Course
+      .form_cell.column_name 
+        From Date
+      .form_cell.column_name 
+        To Date
+      .form_cell.column_name 
+        Hours Completed
+    .form_row
+      .form_cell
+        =m.text_field :training_institution
+      .form_cell
+        =m.text_field :training_course
+      .form_cell
+        =m.text_field :training_start_date
+      .form_cell
+        =m.text_field :training_stop_date
+      .form_cell
+        =m.text_field :training_hours
+    .form_row
+      .form_cell
+        =m.text_field :training_institution_2
+      .form_cell
+        =m.text_field :training_course_2
+      .form_cell
+        =m.text_field :training_start_date_2
+      .form_cell
+        =m.text_field :training_stop_date_2
+      .form_cell
+        =m.text_field :training_hours_2
+  #certification.form_block
+    .header
+      .main Skills & Certifications
+      .sub List all professional licenses and registrations you hold
+    .form_row
+      .form_cell.column_name  
+        License/Certifications
+      .form_cell.column_name 
+        License Number
+      .form_cell.column_name 
+        Issued By
+      .form_cell.column_name 
+        Expiration Date
+      .form_cell.column_name 
+        Hours Completed
+    .form_row
+      .form_cell
+        =m.text_field :certification_name
+      .form_cell
+        =m.text_field :certification_number
+      .form_cell
+        =m.text_field :certification_issuer
+      .form_cell
+        =m.text_field :certification_expiration
+    .form_row
+      .form_cell
+        =m.text_field :certification_name_2
+      .form_cell
+        =m.text_field :certification_number_2
+      .form_cell
+        =m.text_field :certification_issuer_2
+      .form_cell
+        =m.text_field :certification_expiration_2
+    .form_row
+      .form_cell
+        =m.text_field :certification_name_3
+      .form_cell
+        =m.text_field :certification_number_3
+      .form_cell
+        =m.text_field :certification_issuer_3
+      .form_cell
+        =m.text_field :certification_expiration_3
   =submit_tag "Submit"

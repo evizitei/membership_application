@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100830234235) do
+ActiveRecord::Schema.define(:version => 20100902213515) do
 
   create_table "membership_applications", :force => true do |t|
     t.string   "last_name"
@@ -103,6 +103,28 @@ ActiveRecord::Schema.define(:version => 20100830234235) do
     t.string   "college_major_3"
     t.string   "college_degree_3"
     t.string   "college_year_3"
+    t.string   "training_institution"
+    t.string   "training_course"
+    t.date     "training_start_date"
+    t.date     "training_stop_date"
+    t.integer  "training_hours"
+    t.string   "training_institution_2"
+    t.string   "training_course_2"
+    t.date     "training_start_date_2"
+    t.date     "training_stop_date_2"
+    t.integer  "training_hours_2"
+    t.string   "certification_name"
+    t.string   "certification_number"
+    t.string   "certification_issuer"
+    t.date     "certification_expiration"
+    t.string   "certification_name_2"
+    t.string   "certification_number_2"
+    t.string   "certification_issuer_2"
+    t.date     "certification_expiration_2"
+    t.string   "certification_name_3"
+    t.string   "certification_number_3"
+    t.string   "certification_issuer_3"
+    t.date     "certification_expiration_3"
   end
 
 end
