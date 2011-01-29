@@ -1,5 +1,5 @@
 class MembershipApplication < ActiveRecord::Base
-  validates_presence_of :social_security_number
+  validates_presence_of :social_security_number,:birth_date
   validates_numericality_of :social_security_number
   validates_length_of :social_security_number,:is=>9
   
