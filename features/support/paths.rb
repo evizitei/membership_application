@@ -10,8 +10,12 @@ module NavigationHelpers
 
     when /the home\s?page/
       '/'
+    when /the login page/
+      new_user_session_path
     when /the application page/
       new_membership_application_url
+    when /the positions index/
+      positions_path
     else
       begin
         page_name =~ /the (.*) page/

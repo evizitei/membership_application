@@ -1,3 +1,8 @@
+Given /^I fill out the login form$/ do
+  And  %Q{I fill in "user_email" with "something@email.com"}
+  And  %Q{I fill in "user_password" with "secret"}
+end
+
 When /^I fill out the membership form completely$/ do
  When %Q{I fill in "Name (Last)" with "Vizitei"}
   And %Q{I fill in "(First)" with "Ethan"}
