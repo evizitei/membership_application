@@ -4,6 +4,7 @@ class MembershipApplicationsController < ApplicationController
   end
   
   def create
-    @membership_application = MembershipApplication.create!(params[:membership_application])
+    @membership_application = MembershipApplication.new(params[:membership_application])
+    render :action=>:new unless @membership_application.save
   end
 end
