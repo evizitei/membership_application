@@ -5,16 +5,18 @@ gem 'haml'
 
 gem 'pg', :group => :production
 
-gem 'sqlite3-ruby', :require => 'sqlite3', :group=>:development
-gem 'capybara', :group=>:development
-gem 'database_cleaner', :group=>:development
-gem 'cucumber-rails', :group=>:development
-gem 'cucumber', :group=>:development
-gem 'rspec',:group=>:development
-gem 'rspec-rails',">= 2.0.0.beta.13",:group=>:development
-gem 'shoulda',:group=>:development
-gem 'spork', :group=>:development
-gem 'launchy', :group=>:development
-gem 'factory_girl_rails', :group=>:development
-gem 'fakeweb', :group=>:development
-gem 'timecop', :group=>:development
+group :development,:test do
+  gem 'sqlite3-ruby', :require => 'sqlite3' 
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'cucumber-rails'
+  gem 'cucumber'
+  gem 'rspec'
+  gem 'rspec-rails'
+  gem 'shoulda-matchers'
+  gem 'spork'
+  gem 'launchy'
+  gem 'factory_girl_rails'
+  gem 'fakeweb'
+  gem 'timecop'
+end

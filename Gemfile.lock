@@ -119,7 +119,7 @@ GEM
       ffi (~> 0.6.3)
       json_pure
       rubyzip
-    shoulda (2.11.3)
+    shoulda-matchers (1.0.0.beta1)
     spork (0.8.4)
     sqlite3 (1.3.3)
     sqlite3-ruby (1.3.3)
@@ -148,8 +148,8 @@ DEPENDENCIES
   pg
   rails (= 3.0.3)
   rspec
-  rspec-rails (>= 2.0.0.beta.13)
-  shoulda
+  rspec-rails
+  shoulda-matchers
   spork
   sqlite3-ruby
   timecop
