@@ -2,6 +2,7 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.0.3'
 gem 'haml'
+gem 'attr_encrypted'
 
 gem 'pg', :group => :production
 
