@@ -1,0 +1,6 @@
+.page_title Positions
+-@positions.each do |position|
+  .position_row
+    = position.name
+    = link_to "edit",edit_position_path(position)
+=link_to "add position",new_position_path
