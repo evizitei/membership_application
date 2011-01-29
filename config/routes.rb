@@ -1,4 +1,6 @@
 Membership::Application.routes.draw do
+  devise_for :users
+
   resources :membership_applications
 
   root :to=>"welcome#index"
