@@ -1,7 +1,7 @@
 Membership::Application.routes.draw do
   devise_for :users
 
-  resources :membership_applications
+  resources :membership_applications,:positions
 
   root :to=>"welcome#index"
   # The priority is based upon order of creation:
