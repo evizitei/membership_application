@@ -8,3 +8,10 @@ Feature: Membership Application
     When I fill out the membership form completely
       And I press "Submit"
     Then I should see "Thanks for your application!"
+    
+  Scenario: seeing form errors
+    Given I am on the application page
+    When I fill out the membership form completely
+      And I fill in "Social Security Number" with ""
+      And I press "Submit"
+    Then I should see "BOONE COUNTY FIRE PROTECTION DISTRICT"
