@@ -1,0 +1,8 @@
+%h2 Membership Application Site
+
+.open_spots
+  %h3 Our open positions
+  -@positions.each do |position|
+    .position_row
+      %h4.name=position.name
+      .description=position.description
