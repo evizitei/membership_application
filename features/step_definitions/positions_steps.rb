@@ -7,3 +7,13 @@ end
 Given /^there is a position named "([^"]*)"$/ do |name|
   Factory(:position,:name=>name)
 end
+
+Given /^there is an active position named "([^"]*)"$/ do |name|
+  Factory(:position,:name=>name,:active=>true)
+end
+
+Given /^there is an inactive position named "([^"]*)"$/ do |name|
+  Factory(:position,:name=>name,:active=>false)
+end
+
+
