@@ -3,6 +3,7 @@ require 'spec_helper'
 describe MembershipApplication do
   it {should validate_presence_of :social_security_number}
   it {should validate_presence_of :birth_date}
+  it {should validate_presence_of :reason_for_joining}
 
   describe "ssn" do
     describe " validation" do
@@ -44,5 +45,15 @@ describe MembershipApplication do
         test_ssn_manipulation("123-45-6789","123456789")
       end
     end
+  end
+  
+  describe "reason for joining" do
+    describe "validation" do
+      let(:too_short){ "a few words"}
+      let(:long_enough){ "a set of words at least one hundred and fourty characters long that details why somebody wants to join the fire department, that's at least one tweet which shouldn't be that hard."}
+    
+      it{should allow_value(long_enough).for(:reason_for_joining)}
+      it{should_not allow_value(too_short).for(:reason_for_joining)}
+    end  
   end
 end
