@@ -7,4 +7,13 @@ Factory.define :user do |u|
 end
 
 Factory.define :position do |p|
+  p.name "Some position name"
+end
+
+Factory.define :open_position,:parent=>:position do |p|
+  p.active true
+end
+
+Factory.define :closed_position,:parent=>:position do |p|
+  p.active false
 end
