@@ -1,6 +1,8 @@
 require 'spec_helper'
 
 describe MembershipApplication do
+  it { should belong_to :position}
+  
   it {should validate_presence_of :social_security_number}
   it {should validate_presence_of :birth_date}
   it {should validate_presence_of :reason_for_joining}

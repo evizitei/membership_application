@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 describe Position do
+  it{ should have_many :membership_applications}
   it{ should validate_presence_of :name}
   
   describe "open finder" do

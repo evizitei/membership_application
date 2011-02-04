@@ -1,4 +1,6 @@
 class MembershipApplication < ActiveRecord::Base
+  belongs_to :position
+  
   attr_encrypted :social_security_number, :key => 's8L3P4t569An83FM5o2569vfAxeY5gV6'
   
   validates_presence_of :social_security_number,:birth_date,:reason_for_joining
