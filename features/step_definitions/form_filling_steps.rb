@@ -97,4 +97,5 @@ When /^I fill out the membership form completely$/ do
   And %Q{I fill in "membership_application_certification_number_3" with "6543"}
   And %Q{I fill in "membership_application_certification_issuer_3" with "EMS"}
   And %Q{I fill in "membership_application_certification_expiration_3" with "09/12/4005"}
+  And %Q{I fill in "membership_application_reason_for_joining" with "my whole life I've wanted to save lives and ride on big fire trucks.  I see this as my opportunity to do that without having to actually live with low pay and union wars."}
 end
