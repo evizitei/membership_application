@@ -58,4 +58,10 @@ describe MembershipApplication do
       it{should_not allow_value(too_short).for(:reason_for_joining)}
     end  
   end
+
+  describe "felony conviction" do
+    it{ should allow_value(true).for(:has_crime_convictions)}
+    it{ should allow_value(false).for(:has_crime_convictions)}
+    it{ should_not allow_value(nil).for(:has_crime_convictions)}
+  end
 end
