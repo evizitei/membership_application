@@ -5,6 +5,10 @@ Factory.define :membership_application do |m|
   m.has_crime_convictions true
 end
 
+Factory.define :pending_app,:parent=>:membership_application do |m|
+  m.state "submitted"
+end
+
 Factory.define :user do |u|
 end
 
