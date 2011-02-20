@@ -4,6 +4,9 @@ gem 'rails', '3.0.3'
 gem 'haml'
 gem 'attr_encrypted'
 gem 'devise'
+gem "transitions", :require => ["transitions", "active_record/transitions"]
+gem 'cells'
+gem 'cancan'
 
 gem 'pg', :group => :production
 
