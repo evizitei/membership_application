@@ -64,4 +64,42 @@ describe MembershipApplication do
     it{ should allow_value(false).for(:has_crime_convictions)}
     it{ should_not allow_value(nil).for(:has_crime_convictions)}
   end
+  
+  describe "status" do
+    before(:each) do
+      @app = Factory(:membership_application) 
+    end
+    
+    let(:state){ @app.reload.current_state }
+    
+    it "defaults to 'filling out'" do
+      state.should == :filling_out
+    end
+    
+    it "is a valid app" do
+      @app.should be_valid
+    end
+    
+    describe "after being submitted" do
+      before(:each) do
+        @app.submit!
+        @app = MembershipApplication.find(@app.id)
+      end
+      
+      it "becomes 'submitted'" do
+        state.should == :submitted
+      end
+      
+      it "gets picked up by the 'pending' scope" do
+        MembershipApplication.pending_review.all.should include(@app)
+      end
+    end
+  end
+  
+  describe "applicant_name" do
+    it "is a joining of first and last name" do
+      app = MembershipApplication.new(:first_name=>"abc",:last_name=>"def")
+      app.applicant_name.should == "abc def"
+    end
+  end
 end
