@@ -287,13 +287,37 @@
     #previous_experience.form_block
       .form_block_header 
         .main Pervious Fire Service/EMS Experience
+      %table
+        %thead
+          %tr
+            %th Department
+            %th City
+            %th State
+            %th Phone
+            %th Highest Rank
+            %th Years of Service
+        %tbody
+          %tr
+            %td=m.text_field :previous_fire_department,:size=>cramped_field_width
+            %td=m.text_field :previous_fire_city,:size=>cramped_field_width
+            %td=m.text_field :previous_fire_state,:size=>2
+            %td=m.text_field :previous_fire_phone,:size=>date_width
+            %td=m.text_field :previous_fire_rank,:size=>date_width
+            %td=m.text_field :previous_fire_years,:size=>date_width
+          %tr
+            %td=m.text_field :previous_fire_department_2,:size=>cramped_field_width
+            %td=m.text_field :previous_fire_city_2,:size=>cramped_field_width
+            %td=m.text_field :previous_fire_state_2,:size=>2
+            %td=m.text_field :previous_fire_phone_2,:size=>date_width
+            %td=m.text_field :previous_fire_rank_2,:size=>date_width
+            %td=m.text_field :previous_fire_years_2,:size=>date_width
     #references.form_block
       .form_block_header 
         .main References
     #joining_reason.form_block
       .form_block_header
         .main Why do you want to join the Boone County Fire Protection District?
-      .tall_form_row
+      .tall_form_row{:style=>"height:125px;"}
         .last_form_cell{:style=>"width:98%;"}
           =m.text_area :reason_for_joining
     =submit_tag "Submit"     

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110218003631) do
+ActiveRecord::Schema.define(:version => 20110221222517) do
 
   create_table "membership_applications", :force => true do |t|
     t.string   "last_name"
@@ -127,6 +127,18 @@ ActiveRecord::Schema.define(:version => 20110218003631) do
     t.date     "certification_expiration_3"
     t.integer  "position_id"
     t.string   "state"
+    t.string   "previous_fire_department"
+    t.string   "previous_fire_city"
+    t.string   "previous_fire_state"
+    t.string   "previous_fire_phone"
+    t.string   "previous_fire_rank"
+    t.string   "previous_fire_years"
+    t.string   "previous_fire_department_2"
+    t.string   "previous_fire_city_2"
+    t.string   "previous_fire_state_2"
+    t.string   "previous_fire_phone_2"
+    t.string   "previous_fire_rank_2"
+    t.string   "previous_fire_years_2"
   end
 
   create_table "positions", :force => true do |t|
