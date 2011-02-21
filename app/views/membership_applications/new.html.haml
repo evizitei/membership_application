@@ -261,55 +261,40 @@
       .form_block_header
         .main Skills & Certifications
         .sub List all professional licenses and registrations you hold
-      .form_row
-        .form_cell.column_name  
-          License/Certifications
-        .form_cell.column_name 
-          License Number
-        .form_cell.column_name 
-          Issued By
-        .form_cell.column_name 
-          Expiration Date
-        .form_cell.column_name 
-          Hours Completed
-      .form_row
-        .form_cell
-          =m.text_field :certification_name
-        .form_cell
-          =m.text_field :certification_number
-        .form_cell
-          =m.text_field :certification_issuer
-        .form_cell
-          =m.text_field :certification_expiration
-      .form_row
-        .form_cell
-          =m.text_field :certification_name_2
-        .form_cell
-          =m.text_field :certification_number_2
-        .form_cell
-          =m.text_field :certification_issuer_2
-        .form_cell
-          =m.text_field :certification_expiration_2
-      .form_row
-        .form_cell
-          =m.text_field :certification_name_3
-        .form_cell
-          =m.text_field :certification_number_3
-        .form_cell
-          =m.text_field :certification_issuer_3
-        .form_cell
-          =m.text_field :certification_expiration_3
+      %table
+        %thead
+          %tr
+            %th License/Certifications
+            %th License Number
+            %th Issued By
+            %th Expiration Date
+        %tbody
+          %tr
+            %td=m.text_field :certification_name,:size=>cramped_field_width
+            %td=m.text_field :certification_number,:size=>cramped_field_width
+            %td=m.text_field :certification_issuer,:size=>cramped_field_width
+            %td=m.text_field :certification_expiration,:size=>date_width
+          %tr
+            %td=m.text_field :certification_name_2,:size=>cramped_field_width
+            %td=m.text_field :certification_number_2,:size=>cramped_field_width
+            %td=m.text_field :certification_issuer_2,:size=>cramped_field_width
+            %td=m.text_field :certification_expiration_2,:size=>date_width
+          %tr
+            %td=m.text_field :certification_name_3,:size=>cramped_field_width
+            %td=m.text_field :certification_number_3,:size=>cramped_field_width
+            %td=m.text_field :certification_issuer_3,:size=>cramped_field_width
+            %td=m.text_field :certification_expiration_3,:size=>date_width
     #previous_experience.form_block
       .form_block_header 
         .main Pervious Fire Service/EMS Experience
     #references.form_block
       .form_block_header 
         .main References
-    #joining_reason.form_blogk
+    #joining_reason.form_block
       .form_block_header
         .main Why do you want to join the Boone County Fire Protection District?
-      .form_row
-        .form_cell
+      .tall_form_row
+        .last_form_cell{:style=>"width:98%;"}
           =m.text_area :reason_for_joining
     =submit_tag "Submit"     
 %div.modal
