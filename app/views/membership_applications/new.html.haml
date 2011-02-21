@@ -154,21 +154,21 @@
     #military.form_block
       .form_block_header 
         .main Military
-      .form_row
-        .form_cell
+      .tall_form_row
+        .form_cell{:style=>"width:20%;"}
           =m.label :military_branch,"Branch:"
-          =m.text_field :military_branch
-        .form_cell
+          =m.text_field :military_branch,:size=>cramped_field_width
+        .form_cell{:style=>"width:20%;"}
           =m.label :military_rank,"Rank at Discharge:"
-          =m.text_field :military_rank
-        .form_cell
+          =m.text_field :military_rank,:size=>cramped_field_width
+        .form_cell{:style=>"width:20%;"}
           =m.label :military_start_date,"Start Date:"
-          =m.text_field :military_start_date
+          =m.text_field :military_start_date,:size=>date_width
           =m.label :military_discharge_date,"Discharge Date:"
-          =m.text_field :military_discharge_date
-        .form_cell
+          =m.text_field :military_discharge_date,:size=>date_width
+        .last_form_cell{:style=>"width:38%;"}
           =m.label :military_training,"Duties/Special Training:"
-          =m.text_area :military_training
+          =m.text_area :military_training,:class=>"small_area"
     #high_school.form_block
       .form_block_header 
         .main High School
