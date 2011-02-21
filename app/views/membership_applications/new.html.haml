@@ -6,145 +6,153 @@
       %h3 2201 I-70 Dr NW - Columbia MO, 65202
       %h3 (573) 447 - 5000
       %h4 An Affirmative Action/Equal Opportunity Employer
+      %h4#position_info= "Application for '#{@position.name}'"
   =image_tag "bcfd_logo.png",:class=>"righty"
-  #position_info
-    == "Application for '#{@position.name}'"
 #application_form
+  -standard_field_width = 30
+  -cramped_field_width = 20
+  -date_width = 10
   =form_for [@position,@membership_application] do |m|
     = render "shared/error_messages", :target => @membership_application
     #personal_information.form_block
-      .header 
+      .form_block_header 
         .main PERSONAL INFORMATION
         .sub as it appears on your SSN card
       .form_row
-        .form_cell
+        .form_cell{:style=>"width:29%;"}
           =m.label :last_name,"Name (Last)"
-          =m.text_field :last_name
-        .form_cell
+          =m.text_field :last_name,:size=>standard_field_width
+        .form_cell{:style=>"width:29%;"}
           =m.label :first_name,"(First)"
-          =m.text_field :first_name
-        .form_cell
+          =m.text_field :first_name,:size=>standard_field_width
+        .form_cell{:style=>"width:10%;"}
           =m.label :middle_initial,"(M.I.)"
-          =m.text_field :middle_initial
-        .form_cell
+          =m.text_field :middle_initial,:size=>1
+        .last_form_cell{:style=>"width:29%;"}
           =m.label :social_security_number,"Social Security Number"
-          =m.text_field :social_security_number
+          =m.text_field :social_security_number,:size=>standard_field_width
       .form_row
-        .form_cell
+        .form_cell{:style=>"width:39%;"}
           =m.label :address,"Address: (Street)"
-          =m.text_field :address
-        .form_cell
+          =m.text_field :address,:size=>standard_field_width
+        .form_cell{:style=>"width:30%;"}
           =m.label :city,"(City)"
-          =m.text_field :city
-        .form_cell
+          =m.text_field :city,:size=>standard_field_width
+        .form_cell{:style=>"width:10%;"}
           =m.label :address_state,"(State)"
-          =m.text_field :address_state
-        .form_cell
+          =m.text_field :address_state,:size=>2
+        .last_form_cell{:style=>"width:19%;"}
           =m.label :zip,"(Zip)"
-          =m.text_field :zip
+          =m.text_field :zip,:size=>5
       .form_row
-        .form_cell
+        .form_cell{:style=>"width:50%;"}
           =m.label :phone_number,"Telephone Number: (Primary)"
           =m.text_field :phone_number
-        .form_cell
+        .last_form_cell{:style=>"width:49%;"}
           =m.label :phone_number_2,"(Secondary)"
           =m.text_field :phone_number_2
       .form_row
-        .form_cell
+        .form_cell{:style=>"width:50%;"}
           =m.label :email,"E-mail:"
           =m.text_field :email
-        .form_cell
+        .last_form_cell{:style=>"width:49%;"}
           =m.label :may_contact_at_work,"May we contact you at work?"
           =m.radio_button :may_contact_at_work,true
           Yes
           =m.radio_button :may_contact_at_work,false
           No
-      .form_row
-        .form_cell
+      .tall_form_row
+        .form_cell{:style=>"width:50%;"}
           =m.label :birth_date,"Date of Birth:"
           =m.text_field :birth_date
-        .form_cell
+        .last_form_cell{:style=>"width:49%;"}
           =m.label :has_been_employed_under_alias,"Have you been employed under other names?"
           =m.radio_button :has_been_employed_under_alias,true
           Yes
           =m.radio_button :has_been_employed_under_alias,false
           No
-          =m.label :aliases,"List Name(s):"
-          =m.text_field :aliases
+          .inline_group
+            =m.label :aliases,"List Name(s):",:id=>"inline_label_1"
+            =m.text_field :aliases
       .form_row
-        .form_cell
+        .form_cell{:style=>"width:45%;"}
           =m.label :drivers_license_number,"Driver's License Number:"
           =m.text_field :drivers_license_number
+        .form_cell{:style=>"width:15%;"}
           =m.label :drivers_license_state,"State:"
-          =m.text_field :drivers_license_state
+          =m.text_field :drivers_license_state,:size=>2
+        .last_form_cell{:style=>"width:38%;"}
           =m.label :drivers_license_expiration_date,"Date of Expiration:"
           =m.text_field :drivers_license_expiration_date
-      .form_row
-        .form_cell
-          Have you ever been convicted of a crime? 
+      .narrative_form_row
+        .last_form_cell
+          %strong Have you ever been convicted of a crime? 
           =m.radio_button :has_crime_convictions,true
           Yes
           =m.radio_button :has_crime_convictions,false
           No
-          If you answer “Yes”, give details in space provided showing (1) Date; (2) Charge; (3) Place; (4) Court; and (5) Action Taken; NOTE: Convictions or discharges do not necessarily disqualify you from employment. Each case will be considered fairly on its merits and after full consideration of the applicant’s views.
+          %p 
+            %i If you answer 'Yes', give details in space provided showing (1) Date; (2) Charge; (3) Place; (4) Court; and (5) Action Taken; NOTE: Convictions or discharges do not necessarily disqualify you from employment. Each case will be considered fairly on its merits and after full consideration of the applicant’s views.
           =m.text_area :crime_details
-          Have you ever received a traffic violation? 
+          %br
+          %strong Have you ever received a traffic violation? 
           =m.radio_button :has_traffic_violations,true
           Yes
           =m.radio_button :has_traffic_violations,false
           No
-          If you answered “Yes”, explain:
+          %p
+            %i If you answered 'Yes', explain:
           =m.text_area :traffic_violations_details
     #employment_history.form_block
-      .header 
+      .form_block_header 
         .main Employment History
-      .form_row
-        .form_cell
+      .tall_form_row
+        .form_cell{:style=>"width:20%;"}
           =m.label :employer_name,"Name of Employer:"
-          =m.text_field :employer_name
-        .form_cell
+          =m.text_field :employer_name,:size=>cramped_field_width
+        .form_cell{:style=>"width:20%;"}
           =m.label :employer_phone,"Phone:"
-          =m.text_field :employer_phone
-        .form_cell
+          =m.text_field :employer_phone,:size=>cramped_field_width
+        .form_cell{:style=>"width:20%;"}
           =m.label :employer_start,"Start:"
-          =m.text_field :employer_start
+          =m.text_field :employer_start,:size=>date_width
           =m.label :employer_stop,"Ending:"
-          =m.text_field :employer_stop
-        .form_cell
+          =m.text_field :employer_stop,:size=>date_width
+        .last_form_cell{:style=>"width:38%;"}
           =m.label :employer_exit_reason,"Reason for Leaving:"
-          =m.text_area :employer_exit_reason
-      .form_row
-        .form_cell
+          =m.text_area :employer_exit_reason,:class=>"small_area"
+      .tall_form_row
+        .form_cell{:style=>"width:20%;"}
           =m.label :employer_name_2,"Name of Employer:"
-          =m.text_field :employer_name_2
-        .form_cell
+          =m.text_field :employer_name_2,:size=>cramped_field_width
+        .form_cell{:style=>"width:20%;"}
           =m.label :employer_phone_2,"Phone:"
-          =m.text_field :employer_phone_2
-        .form_cell
+          =m.text_field :employer_phone_2,:size=>cramped_field_width
+        .form_cell{:style=>"width:20%;"}
           =m.label :employer_start_2,"Start:"
-          =m.text_field :employer_start_2
+          =m.text_field :employer_start_2,:size=>date_width
           =m.label :employer_stop_2,"Ending:"
-          =m.text_field :employer_stop_2
-        .form_cell
+          =m.text_field :employer_stop_2,:size=>date_width
+        .last_form_cell{:style=>"width:38%;"}
           =m.label :employer_exit_reason_2,"Reason for Leaving:"
-          =m.text_area :employer_exit_reason_2
-      .form_row
-        .form_cell
+          =m.text_area :employer_exit_reason_2,:class=>"small_area"
+      .tall_form_row
+        .form_cell{:style=>"width:20%;"}
           =m.label :employer_name_3,"Name of Employer:"
-          =m.text_field :employer_name_3
-        .form_cell
+          =m.text_field :employer_name_3,:size=>cramped_field_width
+        .form_cell{:style=>"width:20%;"}
           =m.label :employer_phone_3,"Phone:"
-          =m.text_field :employer_phone_3
-        .form_cell
+          =m.text_field :employer_phone_3,:size=>cramped_field_width
+        .form_cell{:style=>"width:20%;"}
           =m.label :employer_start_3,"Start:"
-          =m.text_field :employer_start_3
+          =m.text_field :employer_start_3,:size=>date_width
           =m.label :employer_stop_3,"Ending:"
-          =m.text_field :employer_stop_3
-        .form_cell
+          =m.text_field :employer_stop_3,:size=>date_width
+        .last_form_cell{:style=>"width:38%;"}
           =m.label :employer_exit_reason_3,"Reason for Leaving:"
-          =m.text_area :employer_exit_reason_3
+          =m.text_area :employer_exit_reason_3,:class=>"small_area"
     #military.form_block
-      .header 
+      .form_block_header 
         .main Military
       .form_row
         .form_cell
@@ -162,7 +170,7 @@
           =m.label :military_training,"Duties/Special Training:"
           =m.text_area :military_training
     #high_school.form_block
-      .header 
+      .form_block_header 
         .main High School
       .form_row
         .form_cell
@@ -179,7 +187,7 @@
           =m.label :high_school_ged_date,"Date of GED:"
           =m.text_field :high_school_ged_date
     #college.form_block
-      .header
+      .form_block_header
         .main College/University
       .form_row
         .form_cell.column_name  
@@ -246,7 +254,7 @@
         .form_cell
           =m.text_field :college_year_3
     #training.form_block
-      .header
+      .form_block_header
         .main Special Training
       .form_row
         .form_cell.column_name  
@@ -282,7 +290,7 @@
         .form_cell
           =m.text_field :training_hours_2
     #certification.form_block
-      .header
+      .form_block_header
         .main Skills & Certifications
         .sub List all professional licenses and registrations you hold
       .form_row
@@ -324,13 +332,13 @@
         .form_cell
           =m.text_field :certification_expiration_3
     #previous_experience.form_block
-      .header 
+      .form_block_header 
         .main Pervious Fire Service/EMS Experience
     #references.form_block
-      .header 
+      .form_block_header 
         .main References
     #joining_reason.form_blogk
-      .header
+      .form_block_header
         .main Why do you want to join the Boone County Fire Protection District?
       .form_row
         .form_cell

@@ -1,7 +1,12 @@
-$header_blue: #8EB3E2;
+$header_filler: #8EB3E2;
+$text_color: #0000FF;
+$page_width: 800px;
+$wire_border: 1px solid black;
+$row_height: 60px;
+$standard_padding: 3px;
 
 div#header{
-  width: 800px;
+  width: $page_width;
   heght: 200px;
   
   h2{
@@ -13,7 +18,7 @@ div#header{
   }
   
   h2,h3{
-    color: #0000FF;
+    color: $text_color;
   }
   
   h3,h4{
@@ -22,7 +27,7 @@ div#header{
   
   h2,h3,h4{
     font-weight: bold;
-    margin: 3px;
+    margin: $standard_padding;
     padding: 0px;
   }
 
@@ -48,9 +53,101 @@ div#header{
 #position_info{
   clear:both;
 }
+
 #application_form{
   clear:both;
 }
+
+.form_block{
+  width: $page_width;
+}
+
+@mixin cellish {
+  padding-left: $standard_padding;
+  padding-top: $standard_padding;
+  height: 97%;
+  label{
+    display:block;
+    font-weight:bold;
+  }
+}
+
+@mixin rowish{
+  margin-top: 0px;
+  margin-bottom: 10px;
+  border: $wire_border;
+  
+  .form_cell{
+    @include cellish;
+    float: left;
+    border-right: $wire_border;
+  }
+  
+  .last_form_cell{
+    @include cellish;
+    float: right;
+  }
+  
+  textarea{
+    width: 700px;
+    height: 98px;
+    margin-left: 49px;
+    margin-top: $standard_padding;
+    margin-bottom: $standard_padding;
+  }
+  
+  textarea.small_area{
+    width:250px;
+    height:50px;
+    margin-left: 10px;
+  }
+}
+
+.form_row{
+  @include rowish;
+  height: $row_height + 2;
+}
+
+.tall_form_row{
+  @include rowish;
+  height: $row_height + 35;
+}
+
+.narrative_form_row{
+  @include rowish;
+  height: $row_height + 350;
+}
+
+.form_block_header{
+  background-color: $header_filler;
+  border-top: $wire_border;
+  border-left: $wire_border;
+  border-right: $wire_border;
+  padding-top: $standard_padding;
+  padding-bottom: $standard_padding;
+  
+  div{
+    display:inline;
+  }
+  .main{
+    font-weight:bold;
+    padding-left: 8px;
+  }
+  .sub{
+    font-style: italic;
+  }
+}
+
+.inline_group{
+  input,div{
+    display:inline;
+  }
+}
+
+#inline_label_1{
+  display:inline;
+}
+
 .righty{
   float:right;
 }

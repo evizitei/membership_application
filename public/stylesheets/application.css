@@ -6,7 +6,7 @@ div#header {
   div#header h4 {
     font-style: italic; }
   div#header h2, div#header h3 {
-    color: #0000FF; }
+    color: blue; }
   div#header h3, div#header h4 {
     font-size: 11pt; }
   div#header h2, div#header h3, div#header h4 {
@@ -31,6 +31,129 @@ div#header {
 
 #application_form {
   clear: both; }
+
+.form_block {
+  width: 800px; }
+
+.form_row {
+  margin-top: 0px;
+  margin-bottom: 10px;
+  border: 1px solid black;
+  height: 62px; }
+  .form_row .form_cell {
+    padding-left: 3px;
+    padding-top: 3px;
+    height: 97%;
+    float: left;
+    border-right: 1px solid black; }
+    .form_row .form_cell label {
+      display: block;
+      font-weight: bold; }
+  .form_row .last_form_cell {
+    padding-left: 3px;
+    padding-top: 3px;
+    height: 97%;
+    float: right; }
+    .form_row .last_form_cell label {
+      display: block;
+      font-weight: bold; }
+  .form_row textarea {
+    width: 700px;
+    height: 98px;
+    margin-left: 49px;
+    margin-top: 3px;
+    margin-bottom: 3px; }
+  .form_row textarea.small_area {
+    width: 250px;
+    height: 50px;
+    margin-left: 10px; }
+
+.tall_form_row {
+  margin-top: 0px;
+  margin-bottom: 10px;
+  border: 1px solid black;
+  height: 95px; }
+  .tall_form_row .form_cell {
+    padding-left: 3px;
+    padding-top: 3px;
+    height: 97%;
+    float: left;
+    border-right: 1px solid black; }
+    .tall_form_row .form_cell label {
+      display: block;
+      font-weight: bold; }
+  .tall_form_row .last_form_cell {
+    padding-left: 3px;
+    padding-top: 3px;
+    height: 97%;
+    float: right; }
+    .tall_form_row .last_form_cell label {
+      display: block;
+      font-weight: bold; }
+  .tall_form_row textarea {
+    width: 700px;
+    height: 98px;
+    margin-left: 49px;
+    margin-top: 3px;
+    margin-bottom: 3px; }
+  .tall_form_row textarea.small_area {
+    width: 250px;
+    height: 50px;
+    margin-left: 10px; }
+
+.narrative_form_row {
+  margin-top: 0px;
+  margin-bottom: 10px;
+  border: 1px solid black;
+  height: 410px; }
+  .narrative_form_row .form_cell {
+    padding-left: 3px;
+    padding-top: 3px;
+    height: 97%;
+    float: left;
+    border-right: 1px solid black; }
+    .narrative_form_row .form_cell label {
+      display: block;
+      font-weight: bold; }
+  .narrative_form_row .last_form_cell {
+    padding-left: 3px;
+    padding-top: 3px;
+    height: 97%;
+    float: right; }
+    .narrative_form_row .last_form_cell label {
+      display: block;
+      font-weight: bold; }
+  .narrative_form_row textarea {
+    width: 700px;
+    height: 98px;
+    margin-left: 49px;
+    margin-top: 3px;
+    margin-bottom: 3px; }
+  .narrative_form_row textarea.small_area {
+    width: 250px;
+    height: 50px;
+    margin-left: 10px; }
+
+.form_block_header {
+  background-color: #8eb3e2;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  padding-top: 3px;
+  padding-bottom: 3px; }
+  .form_block_header div {
+    display: inline; }
+  .form_block_header .main {
+    font-weight: bold;
+    padding-left: 8px; }
+  .form_block_header .sub {
+    font-style: italic; }
+
+.inline_group input, .inline_group div {
+  display: inline; }
+
+#inline_label_1 {
+  display: inline; }
 
 .righty {
   float: right; }
