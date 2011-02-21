@@ -1,0 +1,36 @@
+div#header {
+  width: 800px;
+  heght: 200px; }
+  div#header h2 {
+    font-size: 15pt; }
+  div#header h4 {
+    font-style: italic; }
+  div#header h2, div#header h3 {
+    color: #0000FF; }
+  div#header h3, div#header h4 {
+    font-size: 11pt; }
+  div#header h2, div#header h3, div#header h4 {
+    font-weight: bold;
+    margin: 3px;
+    padding: 0px; }
+  div#header div#org_title {
+    float: left;
+    width: 690px; }
+    div#header div#org_title #header_text {
+      margin-top: 10px;
+      text-align: center;
+      float: right;
+      width: 550px; }
+    div#header div#org_title image {
+      float: left; }
+  div#header image {
+    float: left; }
+
+#position_info {
+  clear: both; }
+
+#application_form {
+  clear: both; }
+
+.righty {
+  float: right; }

@@ -1,0 +1,56 @@
+$header_blue: #8EB3E2;
+
+div#header{
+  width: 800px;
+  heght: 200px;
+  
+  h2{
+    font-size: 15pt;
+  }
+  
+  h4{
+    font-style: italic;
+  }
+  
+  h2,h3{
+    color: #0000FF;
+  }
+  
+  h3,h4{
+    font-size: 11pt;
+  }
+  
+  h2,h3,h4{
+    font-weight: bold;
+    margin: 3px;
+    padding: 0px;
+  }
+
+  div#org_title{
+    float:left;
+    width: 690px;
+    #header_text{
+      margin-top: 10px;
+      text-align: center;
+      float:right;
+      width:550px;
+    }
+    image{
+      float:left;
+    }
+  }
+  
+  image{
+    float:left;
+  }
+}
+
+#position_info{
+  clear:both;
+}
+#application_form{
+  clear:both;
+}
+.righty{
+  float:right;
+}
