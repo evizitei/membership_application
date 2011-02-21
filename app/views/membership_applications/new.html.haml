@@ -11,7 +11,7 @@
 #application_form
   -standard_field_width = 30
   -cramped_field_width = 20
-  -date_width = 10
+  -date_width = 9
   =form_for [@position,@membership_application] do |m|
     = render "shared/error_messages", :target => @membership_application
     #personal_information.form_block
@@ -172,123 +172,91 @@
     #high_school.form_block
       .form_block_header 
         .main High School
-      .form_row
-        .form_cell
+      .tall_form_row
+        .form_cell{:style=>"width:32%;"}
           =m.label :high_school_name,"Name:"
-          =m.text_field :high_school_name
-        .form_cell
+          =m.text_field :high_school_name,:size=>standard_field_width
+        .form_cell{:style=>"width:40%;"}
           =m.label :high_school_city,"City:"
-          =m.text_field :high_school_city
+          =m.text_field :high_school_city,:size=>standard_field_width
           =m.label :high_school_state,"State:"
-          =m.text_field :high_school_state
-        .form_cell
+          =m.text_field :high_school_state,:size=>2
+        .last_form_cell{:style=>"width:25%;"}
           =m.label :high_school_graduation_date,"Date Graduated:"
-          =m.text_field :high_school_graduation_date
+          =m.text_field :high_school_graduation_date,:size=>date_width
           =m.label :high_school_ged_date,"Date of GED:"
-          =m.text_field :high_school_ged_date
+          =m.text_field :high_school_ged_date,:size=>date_width
     #college.form_block
       .form_block_header
         .main College/University
-      .form_row
-        .form_cell.column_name  
-          College/University
-          Attended/Location
-        .form_cell.column_name 
-          From Date
-        .form_cell.column_name 
-          To Date
-        .form_cell.column_name 
-          Units Completed
-        .form_cell.column_name 
-          Major
-        .form_cell.column_name 
-          Degree
-        .form_cell.column_name
-          Year
-      .form_row
-        .form_cell
-          =m.text_field :college_name
-          =m.text_field :college_location
-        .form_cell
-          =m.text_field :college_start_date
-        .form_cell
-          =m.text_field :college_stop_date
-        .form_cell
-          =m.text_field :college_units_completed
-        .form_cell
-          =m.text_field :college_major
-        .form_cell
-          =m.text_field :college_degree
-        .form_cell
-          =m.text_field :college_year
-      .form_row
-        .form_cell
-          =m.text_field :college_name_2
-          =m.text_field :college_location_2
-        .form_cell
-          =m.text_field :college_start_date_2
-        .form_cell
-          =m.text_field :college_stop_date_2
-        .form_cell
-          =m.text_field :college_units_completed_2
-        .form_cell
-          =m.text_field :college_major_2
-        .form_cell
-          =m.text_field :college_degree_2
-        .form_cell
-          =m.text_field :college_year_2
-      .form_row
-        .form_cell
-          =m.text_field :college_name_3
-          =m.text_field :college_location_3
-        .form_cell
-          =m.text_field :college_start_date_3
-        .form_cell
-          =m.text_field :college_stop_date_3
-        .form_cell
-          =m.text_field :college_units_completed_3
-        .form_cell
-          =m.text_field :college_major_3
-        .form_cell
-          =m.text_field :college_degree_3
-        .form_cell
-          =m.text_field :college_year_3
+      %table
+        %thead
+          %tr
+            %th
+              Institution Attended
+              %br
+              Institution Location
+            %th From Date
+            %th To Date
+            %th Units Completed
+            %th Major
+            %th Degree
+            %th Year
+        %tbody
+          %tr
+            %td.centered
+              =m.text_field :college_name,:size=>cramped_field_width
+              =m.text_field :college_location,:size=>cramped_field_width
+            %td=m.text_field :college_start_date,:size=>date_width
+            %td=m.text_field :college_stop_date,:size=>date_width
+            %td=m.text_field :college_units_completed,:size=>date_width
+            %td=m.text_field :college_major,:size=>date_width
+            %td=m.text_field :college_degree,:size=>date_width
+            %td=m.text_field :college_year,:size=>4
+          %tr
+            %td.centered
+              =m.text_field :college_name_2,:size=>cramped_field_width
+              =m.text_field :college_location_2,:size=>cramped_field_width
+            %td=m.text_field :college_start_date_2,:size=>date_width
+            %td=m.text_field :college_stop_date_2,:size=>date_width
+            %td=m.text_field :college_units_completed_2,:size=>date_width
+            %td=m.text_field :college_major_2,:size=>date_width
+            %td=m.text_field :college_degree_2,:size=>date_width
+            %td=m.text_field :college_year_2,:size=>4
+          %tr
+            %td.centered
+              =m.text_field :college_name_3,:size=>cramped_field_width
+              =m.text_field :college_location_3,:size=>cramped_field_width
+            %td=m.text_field :college_start_date_3,:size=>date_width
+            %td=m.text_field :college_stop_date_3,:size=>date_width
+            %td=m.text_field :college_units_completed_3,:size=>date_width
+            %td=m.text_field :college_major_3,:size=>date_width
+            %td=m.text_field :college_degree_3,:size=>date_width
+            %td=m.text_field :college_year_3,:size=>4
     #training.form_block
       .form_block_header
         .main Special Training
-      .form_row
-        .form_cell.column_name  
-          Institution - Business or Trade School
-        .form_cell.column_name 
-          Course
-        .form_cell.column_name 
-          From Date
-        .form_cell.column_name 
-          To Date
-        .form_cell.column_name 
-          Hours Completed
-      .form_row
-        .form_cell
-          =m.text_field :training_institution
-        .form_cell
-          =m.text_field :training_course
-        .form_cell
-          =m.text_field :training_start_date
-        .form_cell
-          =m.text_field :training_stop_date
-        .form_cell
-          =m.text_field :training_hours
-      .form_row
-        .form_cell
-          =m.text_field :training_institution_2
-        .form_cell
-          =m.text_field :training_course_2
-        .form_cell
-          =m.text_field :training_start_date_2
-        .form_cell
-          =m.text_field :training_stop_date_2
-        .form_cell
-          =m.text_field :training_hours_2
+      %table
+        %thead
+          %tr
+            %th Institution - Business or Trade School
+            %th Course
+            %th From Date
+            %th To Date
+            %th Hours Completed
+        %tbody
+          %tr
+            %td=m.text_field :training_institution,:size=>cramped_field_width
+            %td=m.text_field :training_course,:size=>cramped_field_width
+            %td=m.text_field :training_start_date,:size=>date_width
+            %td=m.text_field :training_stop_date,:size=>date_width
+            %td=m.text_field :training_hours,:size=>date_width
+          %tr
+            %td=m.text_field :training_institution_2,:size=>cramped_field_width
+            %td=m.text_field :training_course_2,:size=>cramped_field_width
+            %td=m.text_field :training_start_date_2,:size=>date_width
+            %td=m.text_field :training_stop_date_2,:size=>date_width
+            %td=m.text_field :training_hours_2,:size=>date_width
     #certification.form_block
       .form_block_header
         .main Skills & Certifications

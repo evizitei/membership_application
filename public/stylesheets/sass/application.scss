@@ -4,6 +4,7 @@ $page_width: 800px;
 $wire_border: 1px solid black;
 $row_height: 60px;
 $standard_padding: 3px;
+$group_spacing: 10px;
 
 div#header{
   width: $page_width;
@@ -74,7 +75,7 @@ div#header{
 
 @mixin rowish{
   margin-top: 0px;
-  margin-bottom: 10px;
+  margin-bottom: $group_spacing;
   border: $wire_border;
   
   .form_cell{
@@ -118,6 +119,11 @@ div#header{
   height: $row_height + 350;
 }
 
+.table_header_row{
+  @include rowish;
+  height: $row_height - 20;
+}
+
 .form_block_header{
   background-color: $header_filler;
   border-top: $wire_border;
@@ -148,6 +154,36 @@ div#header{
   display:inline;
 }
 
+.column_name{
+  background-color:#CCCCCC;
+  font-weight: bold;
+}
+
 .righty{
   float:right;
+}
+
+.centered{
+  text-align:center;
+}
+
+@mixin wire_table{
+  border-collapse: collapse;
+  border: $wire_border;
+}
+
+table{
+  @include wire_table;
+  width: $page_width;
+  margin-bottom: $group_spacing;
+  
+  tr,th,td{
+    @include wire_table;
+    padding: $standard_padding;
+  }
+  
+  th{
+    background-color:#CCCCCC;
+    font-weight: bold;
+  }
 }
