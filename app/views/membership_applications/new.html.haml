@@ -312,8 +312,51 @@
             %td=m.text_field :previous_fire_rank_2,:size=>date_width
             %td=m.text_field :previous_fire_years_2,:size=>date_width
     #references.form_block
-      .form_block_header 
+      .form_block_header{:style=>"border-bottom: 1px solid black;"}
         .main References
+      %strong List the names of any firefighters that you know that are currently on or have been a member of this department
+      %table
+        %thead
+          %tr
+            %th Name
+            %th Station
+            %th Name
+            %th Station
+        %tbody
+          %tr
+            %td=m.text_field :known_firefighter_name,:size=>cramped_field_width
+            %td=m.text_field :known_firefighter_station,:size=>4
+            %td=m.text_field :known_firefighter_name_2,:size=>cramped_field_width
+            %td=m.text_field :known_firefighter_station_2,:size=>4
+          %tr
+            %td=m.text_field :known_firefighter_name_3,:size=>cramped_field_width
+            %td=m.text_field :known_firefighter_station_3,:size=>4
+            %td=m.text_field :known_firefighter_name_4,:size=>cramped_field_width
+            %td=m.text_field :known_firefighter_station_4,:size=>4
+      %strong List four persons who are NOT related to you and who have definite knowledge of your qualifications and fitness for the position for which you are applying.  Do not repeat names of supervisors listed under Work Experience.
+      %table
+        %thead
+          %tr
+            %th Full Name
+            %th Phone
+            %th Relationship
+        %tbody
+          %tr
+            %td=m.text_field :reference_name,:size=>standard_field_width
+            %td=m.text_field :reference_phone,:size=>cramped_field_width
+            %td=m.text_field :reference_relationship,:size=>standard_field_width
+          %tr
+            %td=m.text_field :reference_name_2,:size=>standard_field_width
+            %td=m.text_field :reference_phone_2,:size=>cramped_field_width
+            %td=m.text_field :reference_relationship_2,:size=>standard_field_width
+          %tr
+            %td=m.text_field :reference_name_3,:size=>standard_field_width
+            %td=m.text_field :reference_phone_3,:size=>cramped_field_width
+            %td=m.text_field :reference_relationship_3,:size=>standard_field_width
+          %tr
+            %td=m.text_field :reference_name_4,:size=>standard_field_width
+            %td=m.text_field :reference_phone_4,:size=>cramped_field_width
+            %td=m.text_field :reference_relationship_4,:size=>standard_field_width
     #joining_reason.form_block
       .form_block_header
         .main Why do you want to join the Boone County Fire Protection District?
