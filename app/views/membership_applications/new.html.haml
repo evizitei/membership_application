@@ -78,12 +78,15 @@
         .form_cell{:style=>"width:45%;"}
           =m.label :drivers_license_number,"Driver's License Number:"
           =m.text_field :drivers_license_number
+        .form_cell{:style=>"width:18%;"}
+          =m.label :drivers_license_class,"License Class:"
+          =m.text_field :drivers_license_class,:size=>2
         .form_cell{:style=>"width:15%;"}
           =m.label :drivers_license_state,"State:"
           =m.text_field :drivers_license_state,:size=>2
-        .last_form_cell{:style=>"width:38%;"}
+        .last_form_cell{:style=>"width:20%;"}
           =m.label :drivers_license_expiration_date,"Date of Expiration:"
-          =m.text_field :drivers_license_expiration_date
+          =m.text_field :drivers_license_expiration_date,:size=>date_width
       .narrative_form_row
         .last_form_cell
           %strong Have you ever been convicted of a crime? 
@@ -193,9 +196,7 @@
         %thead
           %tr
             %th
-              Institution Attended
-              %br
-              Institution Location
+              Institution -- Location
             %th From Date
             %th To Date
             %th Units Completed
@@ -206,6 +207,7 @@
           %tr
             %td.centered
               =m.text_field :college_name,:size=>cramped_field_width
+              ="--"
               =m.text_field :college_location,:size=>cramped_field_width
             %td=m.text_field :college_start_date,:size=>date_width
             %td=m.text_field :college_stop_date,:size=>date_width
@@ -216,6 +218,7 @@
           %tr
             %td.centered
               =m.text_field :college_name_2,:size=>cramped_field_width
+              ="--"
               =m.text_field :college_location_2,:size=>cramped_field_width
             %td=m.text_field :college_start_date_2,:size=>date_width
             %td=m.text_field :college_stop_date_2,:size=>date_width
@@ -226,6 +229,7 @@
           %tr
             %td.centered
               =m.text_field :college_name_3,:size=>cramped_field_width
+              ="--"
               =m.text_field :college_location_3,:size=>cramped_field_width
             %td=m.text_field :college_start_date_3,:size=>date_width
             %td=m.text_field :college_stop_date_3,:size=>date_width

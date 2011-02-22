@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110221222517) do
+ActiveRecord::Schema.define(:version => 20110222212221) do
 
   create_table "membership_applications", :force => true do |t|
     t.string   "last_name"
@@ -139,6 +139,7 @@ ActiveRecord::Schema.define(:version => 20110221222517) do
     t.string   "previous_fire_phone_2"
     t.string   "previous_fire_rank_2"
     t.string   "previous_fire_years_2"
+    t.string   "drivers_license_class"
   end
 
   create_table "positions", :force => true do |t|
