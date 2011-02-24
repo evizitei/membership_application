@@ -20,6 +20,7 @@ When /^I fill out the membership form completely$/ do
   And %Q{I choose "membership_application_has_been_employed_under_alias_true"}
   And %Q{I fill in "List Name(s):" with "E-Z-V, Viz"}
   And %Q{I fill in "Driver's License Number:" with "L133244355466"}
+  And %Q{I fill in "License Class:" with "C"}
   And %Q{I fill in "State:" with "MO"}
   And %Q{I fill in "Date of Expiration:" with "9/12/2013"}
   And %Q{I choose "membership_application_has_crime_convictions_false"}
