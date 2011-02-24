@@ -1,5 +1,6 @@
 %h2 Membership Application Site
 -if current_user
+  = link_to "My Account",edit_user_path(current_user)
   = render_cell :application_queue, :display
 .open_spots
   %h3 Our open positions

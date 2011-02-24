@@ -9,7 +9,10 @@ Given /^I am logged in as an admin$/ do
   Given %Q{I am logged in}
 end
 
-
 Then /^I should be rejected due to authentication$/ do
   Then %Q{I should see "Sign in"}
+end
+
+Then /^I should be subscribed to application notifications$/ do
+  @user.reload.notify_of_new_apps.should == true
 end
