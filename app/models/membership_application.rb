@@ -16,7 +16,7 @@ class MembershipApplication < ActiveRecord::Base
   
   state_machine do
     state :filling_out 
-    state :submitted
+    state :submitted, :enter => lambda {|app| NotificationsMailer.new_application(app).deliver }
     state :reviewed
 
     event :submit do

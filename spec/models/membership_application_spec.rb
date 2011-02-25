@@ -86,13 +86,10 @@ describe MembershipApplication do
         @app = MembershipApplication.find(@app.id)
       end
       
-      it "becomes 'submitted'" do
-        state.should == :submitted
-      end
+      specify{ state.should == :submitted }
+      specify{ MembershipApplication.pending_review.all.should include(@app) }
+      specify{ ActionMailer::Base.deliveries.size.should be > 0 }
       
-      it "gets picked up by the 'pending' scope" do
-        MembershipApplication.pending_review.all.should include(@app)
-      end
     end
   end
   

@@ -5,4 +5,10 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :notify_of_new_apps
+  
+  class << self
+    def subscribed_to_notifications
+      where(:notify_of_new_apps=>true)
+    end
+  end
 end
