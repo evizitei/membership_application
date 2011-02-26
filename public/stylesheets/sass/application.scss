@@ -180,6 +180,7 @@ table{
   tr,th,td{
     @include wire_table;
     padding: $standard_padding;
+    min-height: 50px;
   }
   
   th{
