@@ -94,6 +94,7 @@ GEM
     mocha (0.9.10)
       rake
     nokogiri (1.4.4)
+    pdfkit (0.5.0)
     pg (0.10.1)
     polyglot (0.3.1)
     rack (1.2.1)
@@ -167,6 +168,7 @@ DEPENDENCIES
   fakeweb
   haml
   launchy
+  pdfkit
   pg
   rails (= 3.0.3)
   rspec

@@ -7,6 +7,7 @@ gem 'devise'
 gem "transitions", :require => ["transitions", "active_record/transitions"]
 gem 'cells'
 gem 'cancan'
+gem 'pdfkit'
 
 gem 'pg', :group => :production
 
