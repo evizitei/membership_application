@@ -1,0 +1,7 @@
+-@applications.each do |app|
+  =link_to "Application for #{app.position.name}",edit_position_membership_application_path(app.position,app)
+=form_tag do
+  Social Security Number:
+  =text_field_tag :social_security_number,:value=>params[:social_security_number]
+  %br
+  =submit_tag "Find my application"  

@@ -5,6 +5,8 @@ Membership::Application.routes.draw do
     resources :membership_applications
   end
   
+  match "/membership_applications/find" => "membership_applications#find",:as=>:find_application
+  
   resources :users
 
   root :to=>"welcome#index"

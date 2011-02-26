@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110224022410) do
+ActiveRecord::Schema.define(:version => 20110226180153) do
 
   create_table "membership_applications", :force => true do |t|
     t.string   "last_name"
@@ -161,6 +161,7 @@ ActiveRecord::Schema.define(:version => 20110224022410) do
     t.string   "reference_phone_4"
     t.string   "reference_relationship_4"
     t.string   "drivers_license_class"
+    t.string   "encrypted_social_security_number"
   end
 
   create_table "positions", :force => true do |t|

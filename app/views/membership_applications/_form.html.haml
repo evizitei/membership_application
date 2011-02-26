@@ -1,0 +1,373 @@
+#header
+  %div#org_title
+    =image_tag "bcfd_logo.png"
+    #header_text
+      %h2 BOONE COUNTY FIRE PROTECTION DISTRICT
+      %h3 2201 I-70 Dr NW - Columbia MO, 65202
+      %h3 (573) 447 - 5000
+      %h4 An Affirmative Action/Equal Opportunity Employer
+      %h4#position_info= "Application for '#{position.name}'"
+  =image_tag "bcfd_logo.png",:class=>"righty"
+#application_form
+  -standard_field_width = 30
+  -cramped_field_width = 20
+  -date_width = 9
+  =form_for [position,app] do |m|
+    = render "shared/error_messages", :target => app
+    #personal_information.form_block
+      .form_block_header 
+        .main PERSONAL INFORMATION
+        .sub as it appears on your SSN card
+      .form_row
+        .form_cell{:style=>"width:29%;"}
+          =m.label :last_name,"Name (Last)"
+          =m.text_field :last_name,:size=>standard_field_width
+        .form_cell{:style=>"width:29%;"}
+          =m.label :first_name,"(First)"
+          =m.text_field :first_name,:size=>standard_field_width
+        .form_cell{:style=>"width:10%;"}
+          =m.label :middle_initial,"(M.I.)"
+          =m.text_field :middle_initial,:size=>1
+        .last_form_cell{:style=>"width:29%;"}
+          =m.label :social_security_number,"Social Security Number"
+          =m.text_field :social_security_number,:size=>standard_field_width
+      .form_row
+        .form_cell{:style=>"width:39%;"}
+          =m.label :address,"Address: (Street)"
+          =m.text_field :address,:size=>standard_field_width
+        .form_cell{:style=>"width:30%;"}
+          =m.label :city,"(City)"
+          =m.text_field :city,:size=>standard_field_width
+        .form_cell{:style=>"width:10%;"}
+          =m.label :address_state,"(State)"
+          =m.text_field :address_state,:size=>2
+        .last_form_cell{:style=>"width:19%;"}
+          =m.label :zip,"(Zip)"
+          =m.text_field :zip,:size=>5
+      .form_row
+        .form_cell{:style=>"width:50%;"}
+          =m.label :phone_number,"Telephone Number: (Primary)"
+          =m.text_field :phone_number
+        .last_form_cell{:style=>"width:49%;"}
+          =m.label :phone_number_2,"(Secondary)"
+          =m.text_field :phone_number_2
+      .form_row
+        .form_cell{:style=>"width:50%;"}
+          =m.label :email,"E-mail:"
+          =m.text_field :email
+        .last_form_cell{:style=>"width:49%;"}
+          =m.label :may_contact_at_work,"May we contact you at work?"
+          =m.radio_button :may_contact_at_work,true
+          Yes
+          =m.radio_button :may_contact_at_work,false
+          No
+      .tall_form_row
+        .form_cell{:style=>"width:50%;"}
+          =m.label :birth_date,"Date of Birth:"
+          =m.text_field :birth_date
+        .last_form_cell{:style=>"width:49%;"}
+          =m.label :has_been_employed_under_alias,"Have you been employed under other names?"
+          =m.radio_button :has_been_employed_under_alias,true
+          Yes
+          =m.radio_button :has_been_employed_under_alias,false
+          No
+          .inline_group
+            =m.label :aliases,"List Name(s):",:id=>"inline_label_1"
+            =m.text_field :aliases
+      .form_row
+        .form_cell{:style=>"width:45%;"}
+          =m.label :drivers_license_number,"Driver's License Number:"
+          =m.text_field :drivers_license_number
+        .form_cell{:style=>"width:18%;"}
+          =m.label :drivers_license_class,"License Class:"
+          =m.text_field :drivers_license_class,:size=>2
+        .form_cell{:style=>"width:15%;"}
+          =m.label :drivers_license_state,"State:"
+          =m.text_field :drivers_license_state,:size=>2
+        .last_form_cell{:style=>"width:20%;"}
+          =m.label :drivers_license_expiration_date,"Date of Expiration:"
+          =m.text_field :drivers_license_expiration_date,:size=>date_width
+      .narrative_form_row
+        .last_form_cell
+          %strong Have you ever been convicted of a crime? 
+          =m.radio_button :has_crime_convictions,true
+          Yes
+          =m.radio_button :has_crime_convictions,false
+          No
+          %p 
+            %i If you answer 'Yes', give details in space provided showing (1) Date; (2) Charge; (3) Place; (4) Court; and (5) Action Taken; NOTE: Convictions or discharges do not necessarily disqualify you from employment. Each case will be considered fairly on its merits and after full consideration of the applicant’s views.
+          =m.text_area :crime_details
+          %br
+          %strong Have you ever received a traffic violation? 
+          =m.radio_button :has_traffic_violations,true
+          Yes
+          =m.radio_button :has_traffic_violations,false
+          No
+          %p
+            %i If you answered 'Yes', explain:
+          =m.text_area :traffic_violations_details
+    #employment_history.form_block
+      .form_block_header 
+        .main Employment History
+      .tall_form_row
+        .form_cell{:style=>"width:20%;"}
+          =m.label :employer_name,"Name of Employer:"
+          =m.text_field :employer_name,:size=>cramped_field_width
+        .form_cell{:style=>"width:20%;"}
+          =m.label :employer_phone,"Phone:"
+          =m.text_field :employer_phone,:size=>cramped_field_width
+        .form_cell{:style=>"width:20%;"}
+          =m.label :employer_start,"Start:"
+          =m.text_field :employer_start,:size=>date_width
+          =m.label :employer_stop,"Ending:"
+          =m.text_field :employer_stop,:size=>date_width
+        .last_form_cell{:style=>"width:38%;"}
+          =m.label :employer_exit_reason,"Reason for Leaving:"
+          =m.text_area :employer_exit_reason,:class=>"small_area"
+      .tall_form_row
+        .form_cell{:style=>"width:20%;"}
+          =m.label :employer_name_2,"Name of Employer:"
+          =m.text_field :employer_name_2,:size=>cramped_field_width
+        .form_cell{:style=>"width:20%;"}
+          =m.label :employer_phone_2,"Phone:"
+          =m.text_field :employer_phone_2,:size=>cramped_field_width
+        .form_cell{:style=>"width:20%;"}
+          =m.label :employer_start_2,"Start:"
+          =m.text_field :employer_start_2,:size=>date_width
+          =m.label :employer_stop_2,"Ending:"
+          =m.text_field :employer_stop_2,:size=>date_width
+        .last_form_cell{:style=>"width:38%;"}
+          =m.label :employer_exit_reason_2,"Reason for Leaving:"
+          =m.text_area :employer_exit_reason_2,:class=>"small_area"
+      .tall_form_row
+        .form_cell{:style=>"width:20%;"}
+          =m.label :employer_name_3,"Name of Employer:"
+          =m.text_field :employer_name_3,:size=>cramped_field_width
+        .form_cell{:style=>"width:20%;"}
+          =m.label :employer_phone_3,"Phone:"
+          =m.text_field :employer_phone_3,:size=>cramped_field_width
+        .form_cell{:style=>"width:20%;"}
+          =m.label :employer_start_3,"Start:"
+          =m.text_field :employer_start_3,:size=>date_width
+          =m.label :employer_stop_3,"Ending:"
+          =m.text_field :employer_stop_3,:size=>date_width
+        .last_form_cell{:style=>"width:38%;"}
+          =m.label :employer_exit_reason_3,"Reason for Leaving:"
+          =m.text_area :employer_exit_reason_3,:class=>"small_area"
+    #military.form_block
+      .form_block_header 
+        .main Military
+      .tall_form_row
+        .form_cell{:style=>"width:20%;"}
+          =m.label :military_branch,"Branch:"
+          =m.text_field :military_branch,:size=>cramped_field_width
+        .form_cell{:style=>"width:20%;"}
+          =m.label :military_rank,"Rank at Discharge:"
+          =m.text_field :military_rank,:size=>cramped_field_width
+        .form_cell{:style=>"width:20%;"}
+          =m.label :military_start_date,"Start Date:"
+          =m.text_field :military_start_date,:size=>date_width
+          =m.label :military_discharge_date,"Discharge Date:"
+          =m.text_field :military_discharge_date,:size=>date_width
+        .last_form_cell{:style=>"width:38%;"}
+          =m.label :military_training,"Duties/Special Training:"
+          =m.text_area :military_training,:class=>"small_area"
+    #high_school.form_block
+      .form_block_header 
+        .main High School
+      .tall_form_row
+        .form_cell{:style=>"width:32%;"}
+          =m.label :high_school_name,"Name:"
+          =m.text_field :high_school_name,:size=>standard_field_width
+        .form_cell{:style=>"width:40%;"}
+          =m.label :high_school_city,"City:"
+          =m.text_field :high_school_city,:size=>standard_field_width
+          =m.label :high_school_state,"State:"
+          =m.text_field :high_school_state,:size=>2
+        .last_form_cell{:style=>"width:25%;"}
+          =m.label :high_school_graduation_date,"Date Graduated:"
+          =m.text_field :high_school_graduation_date,:size=>date_width
+          =m.label :high_school_ged_date,"Date of GED:"
+          =m.text_field :high_school_ged_date,:size=>date_width
+    #college.form_block
+      .form_block_header
+        .main College/University
+      %table
+        %thead
+          %tr
+            %th
+              Institution -- Location
+            %th From Date
+            %th To Date
+            %th Units Completed
+            %th Major
+            %th Degree
+            %th Year
+        %tbody
+          %tr
+            %td.centered
+              =m.text_field :college_name,:size=>cramped_field_width
+              ="--"
+              =m.text_field :college_location,:size=>cramped_field_width
+            %td=m.text_field :college_start_date,:size=>date_width
+            %td=m.text_field :college_stop_date,:size=>date_width
+            %td=m.text_field :college_units_completed,:size=>date_width
+            %td=m.text_field :college_major,:size=>date_width
+            %td=m.text_field :college_degree,:size=>date_width
+            %td=m.text_field :college_year,:size=>4
+          %tr
+            %td.centered
+              =m.text_field :college_name_2,:size=>cramped_field_width
+              ="--"
+              =m.text_field :college_location_2,:size=>cramped_field_width
+            %td=m.text_field :college_start_date_2,:size=>date_width
+            %td=m.text_field :college_stop_date_2,:size=>date_width
+            %td=m.text_field :college_units_completed_2,:size=>date_width
+            %td=m.text_field :college_major_2,:size=>date_width
+            %td=m.text_field :college_degree_2,:size=>date_width
+            %td=m.text_field :college_year_2,:size=>4
+          %tr
+            %td.centered
+              =m.text_field :college_name_3,:size=>cramped_field_width
+              ="--"
+              =m.text_field :college_location_3,:size=>cramped_field_width
+            %td=m.text_field :college_start_date_3,:size=>date_width
+            %td=m.text_field :college_stop_date_3,:size=>date_width
+            %td=m.text_field :college_units_completed_3,:size=>date_width
+            %td=m.text_field :college_major_3,:size=>date_width
+            %td=m.text_field :college_degree_3,:size=>date_width
+            %td=m.text_field :college_year_3,:size=>4
+    #training.form_block
+      .form_block_header
+        .main Special Training
+      %table
+        %thead
+          %tr
+            %th Institution - Business or Trade School
+            %th Course
+            %th From Date
+            %th To Date
+            %th Hours Completed
+        %tbody
+          %tr
+            %td=m.text_field :training_institution,:size=>cramped_field_width
+            %td=m.text_field :training_course,:size=>cramped_field_width
+            %td=m.text_field :training_start_date,:size=>date_width
+            %td=m.text_field :training_stop_date,:size=>date_width
+            %td=m.text_field :training_hours,:size=>date_width
+          %tr
+            %td=m.text_field :training_institution_2,:size=>cramped_field_width
+            %td=m.text_field :training_course_2,:size=>cramped_field_width
+            %td=m.text_field :training_start_date_2,:size=>date_width
+            %td=m.text_field :training_stop_date_2,:size=>date_width
+            %td=m.text_field :training_hours_2,:size=>date_width
+    #certification.form_block
+      .form_block_header
+        .main Skills & Certifications
+        .sub List all professional licenses and registrations you hold
+      %table
+        %thead
+          %tr
+            %th License/Certifications
+            %th License Number
+            %th Issued By
+            %th Expiration Date
+        %tbody
+          %tr
+            %td=m.text_field :certification_name,:size=>cramped_field_width
+            %td=m.text_field :certification_number,:size=>cramped_field_width
+            %td=m.text_field :certification_issuer,:size=>cramped_field_width
+            %td=m.text_field :certification_expiration,:size=>date_width
+          %tr
+            %td=m.text_field :certification_name_2,:size=>cramped_field_width
+            %td=m.text_field :certification_number_2,:size=>cramped_field_width
+            %td=m.text_field :certification_issuer_2,:size=>cramped_field_width
+            %td=m.text_field :certification_expiration_2,:size=>date_width
+          %tr
+            %td=m.text_field :certification_name_3,:size=>cramped_field_width
+            %td=m.text_field :certification_number_3,:size=>cramped_field_width
+            %td=m.text_field :certification_issuer_3,:size=>cramped_field_width
+            %td=m.text_field :certification_expiration_3,:size=>date_width
+    #previous_experience.form_block
+      .form_block_header 
+        .main Pervious Fire Service/EMS Experience
+      %table
+        %thead
+          %tr
+            %th Department
+            %th City
+            %th State
+            %th Phone
+            %th Highest Rank
+            %th Years of Service
+        %tbody
+          %tr
+            %td=m.text_field :previous_fire_department,:size=>cramped_field_width
+            %td=m.text_field :previous_fire_city,:size=>cramped_field_width
+            %td=m.text_field :previous_fire_state,:size=>2
+            %td=m.text_field :previous_fire_phone,:size=>date_width
+            %td=m.text_field :previous_fire_rank,:size=>date_width
+            %td=m.text_field :previous_fire_years,:size=>date_width
+          %tr
+            %td=m.text_field :previous_fire_department_2,:size=>cramped_field_width
+            %td=m.text_field :previous_fire_city_2,:size=>cramped_field_width
+            %td=m.text_field :previous_fire_state_2,:size=>2
+            %td=m.text_field :previous_fire_phone_2,:size=>date_width
+            %td=m.text_field :previous_fire_rank_2,:size=>date_width
+            %td=m.text_field :previous_fire_years_2,:size=>date_width
+    #references.form_block
+      .form_block_header{:style=>"border-bottom: 1px solid black;"}
+        .main References
+      %strong List the names of any firefighters that you know that are currently on or have been a member of this department
+      %table
+        %thead
+          %tr
+            %th Name
+            %th Station
+            %th Name
+            %th Station
+        %tbody
+          %tr
+            %td=m.text_field :known_firefighter_name,:size=>cramped_field_width
+            %td=m.text_field :known_firefighter_station,:size=>4
+            %td=m.text_field :known_firefighter_name_2,:size=>cramped_field_width
+            %td=m.text_field :known_firefighter_station_2,:size=>4
+          %tr
+            %td=m.text_field :known_firefighter_name_3,:size=>cramped_field_width
+            %td=m.text_field :known_firefighter_station_3,:size=>4
+            %td=m.text_field :known_firefighter_name_4,:size=>cramped_field_width
+            %td=m.text_field :known_firefighter_station_4,:size=>4
+      %strong List four persons who are NOT related to you and who have definite knowledge of your qualifications and fitness for the position for which you are applying.  Do not repeat names of supervisors listed under Work Experience.
+      %table
+        %thead
+          %tr
+            %th Full Name
+            %th Phone
+            %th Relationship
+        %tbody
+          %tr
+            %td=m.text_field :reference_name,:size=>standard_field_width
+            %td=m.text_field :reference_phone,:size=>cramped_field_width
+            %td=m.text_field :reference_relationship,:size=>standard_field_width
+          %tr
+            %td=m.text_field :reference_name_2,:size=>standard_field_width
+            %td=m.text_field :reference_phone_2,:size=>cramped_field_width
+            %td=m.text_field :reference_relationship_2,:size=>standard_field_width
+          %tr
+            %td=m.text_field :reference_name_3,:size=>standard_field_width
+            %td=m.text_field :reference_phone_3,:size=>cramped_field_width
+            %td=m.text_field :reference_relationship_3,:size=>standard_field_width
+          %tr
+            %td=m.text_field :reference_name_4,:size=>standard_field_width
+            %td=m.text_field :reference_phone_4,:size=>cramped_field_width
+            %td=m.text_field :reference_relationship_4,:size=>standard_field_width
+    #joining_reason.form_block
+      .form_block_header
+        .main Why do you want to join the Boone County Fire Protection District?
+      .tall_form_row{:style=>"height:125px;"}
+        .last_form_cell{:style=>"width:98%;"}
+          =m.text_area :reason_for_joining
+    =submit_tag "Submit"     
+%div.modal
+  %p 
+    This is going to be hard work.  It will take a lot of time.  You will not get paid.

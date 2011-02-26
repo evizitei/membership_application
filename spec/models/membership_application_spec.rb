@@ -20,9 +20,8 @@ describe MembershipApplication do
         @app = Factory(:membership_application,:social_security_number=>"702891357")
       end
       
-      it "should be encrypted" do
-        @app.encrypted_social_security_number.should == "90m2H1zBFuaDW3Kx/zi+oQ==\n"
-      end
+      specify{ @app.encrypted_social_security_number.should == "90m2H1zBFuaDW3Kx/zi+oQ==\n" }
+      specify{ @app.reload.social_security_number.should == "702891357"}
     end
    
     describe "manipulation" do
@@ -46,6 +45,17 @@ describe MembershipApplication do
       it "removes dashes" do
         test_ssn_manipulation("123-45-6789","123456789")
       end
+    end
+    
+    describe "manipulation through mass assigment" do
+      before(:each) do
+        @app = Factory(:pending_app,:social_security_number=>"123-45-6789")
+        @app = MembershipApplication.find(@app.id)
+      end
+      
+      specify{ @app.social_security_number.should == "123456789" }  
+      specify{ @app.encrypted_social_security_number.should == "du9jNS/soiJMv5acVb3Jww==\n" }
+      specify{ MembershipApplication.for_ssn("123-45-6789").should include(@app)}
     end
   end
   
@@ -71,14 +81,8 @@ describe MembershipApplication do
     end
     
     let(:state){ @app.reload.current_state }
-    
-    it "defaults to 'filling out'" do
-      state.should == :filling_out
-    end
-    
-    it "is a valid app" do
-      @app.should be_valid
-    end
+    specify{ state.should == :filling_out }
+    specify{ @app.should be_valid }
     
     describe "after being submitted" do
       before(:each) do
@@ -89,14 +93,10 @@ describe MembershipApplication do
       specify{ state.should == :submitted }
       specify{ MembershipApplication.pending_review.all.should include(@app) }
       specify{ ActionMailer::Base.deliveries.size.should be > 0 }
-      
     end
   end
   
   describe "applicant_name" do
-    it "is a joining of first and last name" do
-      app = MembershipApplication.new(:first_name=>"abc",:last_name=>"def")
-      app.applicant_name.should == "abc def"
-    end
+    specify{ MembershipApplication.new(:first_name=>"abc",:last_name=>"def").applicant_name.should == "abc def" }
   end
 end

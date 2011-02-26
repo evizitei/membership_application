@@ -17,3 +17,15 @@ Feature: Membership Application
       And I fill in "Social Security Number" with ""
       And I press "Submit"
     Then I should see "BOONE COUNTY FIRE PROTECTION DISTRICT"
+
+  Scenario: editing an application
+    Given there is an active position named "Volunteer"
+      And there is an application for "Volunteer" with the SSN "123-45-6789"
+    When I go to the homepage 
+      And I follow "Finish my application"
+      And I fill in "123-45-6789" for "social_security_number"
+      And I press "Find my application"
+      And I follow "Application for Volunteer"
+    Then show me the page
+      And I press "Submit"
+    Then I should see "Thanks for your application!"

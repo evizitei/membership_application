@@ -29,6 +29,11 @@ class MembershipApplication < ActiveRecord::Base
     def pending_review
       where(:state=>"submitted")
     end
+    
+    def for_ssn(ssn)
+      ssn = ssn.gsub(/[\s|-]+/,"")
+      find_all_by_social_security_number(ssn)
+    end
   end
 
   def applicant_name
