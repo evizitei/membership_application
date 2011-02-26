@@ -66,6 +66,8 @@
         .form_cell{:style=>"width:50%;"}
           =m.label :birth_date,"Date of Birth:"
           =m.text_field :birth_date
+          %br
+          %i (mm/dd/yyyy)
         .last_form_cell{:style=>"width:49%;"}
           =m.label :has_been_employed_under_alias,"Have you been employed under other names?"
           =m.radio_button :has_been_employed_under_alias,true

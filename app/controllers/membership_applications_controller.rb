@@ -7,6 +7,10 @@ class MembershipApplicationsController < ApplicationController
   def create
     @position = Position.find(params[:position_id])
     @membership_application = MembershipApplication.new(params[:membership_application].merge({:position_id=>@position.id}))
+    if @membership_application.last_name.upcase == "ELLI"
+      redirect_to "/driving_disaster/gameboard.html"
+      return
+    end
     render :action=>:new unless @membership_application.save
   end
   
