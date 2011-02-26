@@ -1,0 +1,399 @@
+-app = @membership_application
+#header
+  %div#org_title
+    =image_tag "bcfd_logo.png"
+    #header_text
+      %h2 BOONE COUNTY FIRE PROTECTION DISTRICT
+      %h3 2201 I-70 Dr NW - Columbia MO, 65202
+      %h3 (573) 447 - 5000
+      %h4 An Affirmative Action/Equal Opportunity Employer
+      %h4#position_info= "Application for '#{@position.name}'"
+  =image_tag "bcfd_logo.png",:class=>"righty"
+#application_form
+  -standard_field_width = 30
+  -cramped_field_width = 20
+  -date_width = 9
+  #personal_information.form_block
+    .form_block_header 
+      .main PERSONAL INFORMATION
+      .sub as it appears on your SSN card
+    .form_row
+      .form_cell{:style=>"width:29%;"}
+        %strong Name (Last)
+        %br
+        =app.last_name
+      .form_cell{:style=>"width:29%;"}
+        %strong (First)
+        %br
+        =app.first_name
+      .form_cell{:style=>"width:10%;"}
+        %strong (M.I.)
+        %br
+        =app.middle_initial
+      .last_form_cell{:style=>"width:29%;"}
+        %strong Social Security Number
+        %br
+        =app.social_security_number
+    .form_row
+      .form_cell{:style=>"width:39%;"}
+        %strong Address: (Street)
+        %br
+        =app.address
+      .form_cell{:style=>"width:30%;"}
+        %strong (City)
+        %br
+        =app.city
+      .form_cell{:style=>"width:10%;"}
+        %strong (State)
+        %br
+        =app.address_state
+      .last_form_cell{:style=>"width:19%;"}
+        %strong (Zip)
+        %br
+        =app.zip
+    .form_row
+      .form_cell{:style=>"width:50%;"}
+        %strong Telephone Number: (Primary)
+        %br
+        =app.phone_number
+      .last_form_cell{:style=>"width:49%;"}
+        %strong (Secondary)
+        %br
+        =app.phone_number_2
+    .form_row
+      .form_cell{:style=>"width:50%;"}
+        %strong E-mail:
+        %br
+        =app.email
+      .last_form_cell{:style=>"width:49%;"}
+        %strong May we contact you at work?
+        %br
+        =(app.may_contact_at_work ? "Yes" : "No")
+    .tall_form_row
+      .form_cell{:style=>"width:50%;"}
+        %strong Date of Birth:
+        %br
+        =app.birth_date.try(:to_s)
+      .last_form_cell{:style=>"width:49%;"}
+        %strong Have you been employed under other names?
+        %br
+        =(app.has_been_employed_under_alias ? "Yes" : "No")
+        .inline_group
+          %strong List Name(s):
+          =app.aliases
+    .form_row
+      .form_cell{:style=>"width:45%;"}
+        %strong Driver's License Number:
+        %br
+        =app.drivers_license_number
+      .form_cell{:style=>"width:18%;"}
+        %strong License Class:
+        %br
+        =app.drivers_license_class
+      .form_cell{:style=>"width:15%;"}
+        %strong State:
+        %br
+        =app.drivers_license_state
+      .last_form_cell{:style=>"width:20%;"}
+        %strong Date of Expiration:
+        %br
+        =app.drivers_license_expiration_date
+    .narrative_form_row
+      .last_form_cell
+        %strong Have you ever been convicted of a crime? 
+        =(app.has_crime_convictions ? "Yes" : "No")
+        %p 
+          %i If you answer 'Yes', give details in space provided showing (1) Date; (2) Charge; (3) Place; (4) Court; and (5) Action Taken; NOTE: Convictions or discharges do not necessarily disqualify you from employment. Each case will be considered fairly on its merits and after full consideration of the applicant’s views.
+        =app.crime_details
+        %br
+        %strong Have you ever received a traffic violation? 
+        =(app.has_traffic_violations ? "Yes" : "No")
+        %p
+          %i If you answered 'Yes', explain:
+        =app.traffic_violations_details
+  #employment_history.form_block
+    .form_block_header 
+      .main Employment History
+    .tall_form_row
+      .form_cell{:style=>"width:20%;"}
+        %strong Name of Employer:
+        %br
+        =app.employer_name
+      .form_cell{:style=>"width:20%;"}
+        %strong Phone:
+        %br
+        =app.employer_phone
+      .form_cell{:style=>"width:20%;"}
+        %strong Start:
+        %br
+        =app.employer_start
+        %strong Ending:
+        %br
+        =app.employer_stop
+      .last_form_cell{:style=>"width:38%;"}
+        %strong Reason for Leaving:
+        %br
+        =app.employer_exit_reason
+    .tall_form_row
+      .form_cell{:style=>"width:20%;"}
+        %strong Name of Employer:
+        %br
+        =app.employer_name_2
+      .form_cell{:style=>"width:20%;"}
+        %strong Phone:
+        %br
+        =app.employer_phone_2
+      .form_cell{:style=>"width:20%;"}
+        %strong Start:
+        %br
+        =app.employer_start_2
+        %strong Ending:
+        %br
+        =app.employer_stop_2
+      .last_form_cell{:style=>"width:38%;"}
+        %strong Reason for Leaving:
+        %br
+        =app.employer_exit_reason_2
+    .tall_form_row
+      .form_cell{:style=>"width:20%;"}
+        %strong Name of Employer:
+        %br
+        =app.employer_name_3
+      .form_cell{:style=>"width:20%;"}
+        %strong Phone:
+        %br
+        =app.employer_phone_3
+      .form_cell{:style=>"width:20%;"}
+        %strong Start:
+        %br
+        =app.employer_start_3
+        %strong Ending:
+        %br
+        =app.employer_stop_3
+      .last_form_cell{:style=>"width:38%;"}
+        %strong Reason for Leaving:
+        %br
+        =app.employer_exit_reason_3
+  #military.form_block
+    .form_block_header 
+      .main Military
+    .tall_form_row
+      .form_cell{:style=>"width:20%;"}
+        %strong Branch:
+        %br
+        =app.military_branch
+      .form_cell{:style=>"width:20%;"}
+        %strong Rank at Discharge:
+        %br
+        =app.military_rank
+      .form_cell{:style=>"width:20%;"}
+        %strong Start Date:
+        %br
+        =app.military_start_date
+        %strong Discharge Date:
+        %br
+        =app.military_discharge_date
+      .last_form_cell{:style=>"width:38%;"}
+        %strong Duties/Special Training:
+        %br
+        =app.military_training
+  #high_school.form_block
+    .form_block_header 
+      .main High School
+    .tall_form_row
+      .form_cell{:style=>"width:32%;"}
+        %strong Name:
+        %br
+        =app.high_school_name
+      .form_cell{:style=>"width:40%;"}
+        %strong City:
+        %br
+        =app.high_school_city
+        %strong State:
+        %br
+        =app.high_school_state
+      .last_form_cell{:style=>"width:25%;"}
+        %strong Date Graduated:
+        %br
+        =app.high_school_graduation_date
+        %strong Date of GED:
+        %br
+        =app.high_school_ged_date
+  #college.form_block
+    .form_block_header
+      .main College/University
+    %table
+      %thead
+        %tr
+          %th
+            Institution -- Location
+          %th From Date
+          %th To Date
+          %th Units Completed
+          %th Major
+          %th Degree
+          %th Year
+      %tbody
+        %tr
+          %td.centered
+            =app.college_name
+            ="--"
+            =app.college_location
+          %td=app.college_start_date
+          %td=app.college_stop_date
+          %td=app.college_units_completed
+          %td=app.college_major
+          %td=app.college_degree
+          %td=app.college_year
+        %tr
+          %td.centered
+            =app.college_name_2
+            ="--"
+            =app.college_location_2
+          %td=app.college_start_date_2
+          %td=app.college_stop_date_2
+          %td=app.college_units_completed_2
+          %td=app.college_major_2
+          %td=app.college_degree_2
+          %td=app.college_year_2
+        %tr
+          %td.centered
+            =app.college_name_3
+            ="--"
+            =app.college_location_3
+          %td=app.college_start_date_3
+          %td=app.college_stop_date_3
+          %td=app.college_units_completed_3
+          %td=app.college_major_3
+          %td=app.college_degree_3
+          %td=app.college_year_3
+  #training.form_block
+    .form_block_header
+      .main Special Training
+    %table
+      %thead
+        %tr
+          %th Institution - Business or Trade School
+          %th Course
+          %th From Date
+          %th To Date
+          %th Hours Completed
+      %tbody
+        %tr
+          %td=app.training_institution or "N/A"
+          %td=app.training_course
+          %td=app.training_start_date
+          %td=app.training_stop_date
+          %td=app.training_hours
+        %tr
+          %td=app.training_institution_2 or "N/A"
+          %td=app.training_course_2
+          %td=app.training_start_date_2
+          %td=app.training_stop_date_2
+          %td=app.training_hours_2
+  #certification.form_block
+    .form_block_header
+      .main Skills & Certifications
+      .sub List all professional licenses and registrations you hold
+    %table
+      %thead
+        %tr
+          %th License/Certifications
+          %th License Number
+          %th Issued By
+          %th Expiration Date
+      %tbody
+        %tr
+          %td=app.certification_name or "N/A"
+          %td=app.certification_number
+          %td=app.certification_issuer
+          %td=app.certification_expiration
+        %tr
+          %td=app.certification_name_2 or "N/A"
+          %td=app.certification_number_2
+          %td=app.certification_issuer_2
+          %td=app.certification_expiration_2
+        %tr
+          %td=app.certification_name_3 or "N/A"
+          %td=app.certification_number_3
+          %td=app.certification_issuer_3
+          %td=app.certification_expiration_3
+  #previous_experience.form_block
+    .form_block_header 
+      .main Pervious Fire Service/EMS Experience
+    %table
+      %thead
+        %tr
+          %th Department
+          %th City
+          %th State
+          %th Phone
+          %th Highest Rank
+          %th Years of Service
+      %tbody
+        %tr
+          %td=app.previous_fire_department or "N/A"
+          %td=app.previous_fire_city
+          %td=app.previous_fire_state
+          %td=app.previous_fire_phone
+          %td=app.previous_fire_rank
+          %td=app.previous_fire_years
+        %tr
+          %td=app.previous_fire_department_2 or "N/A"
+          %td=app.previous_fire_city_2
+          %td=app.previous_fire_state_2
+          %td=app.previous_fire_phone_2
+          %td=app.previous_fire_rank_2
+          %td=app.previous_fire_years_2
+  #references.form_block
+    .form_block_header{:style=>"border-bottom: 1px solid black;"}
+      .main References
+    %strong List the names of any firefighters that you know that are currently on or have been a member of this department
+    %table
+      %thead
+        %tr
+          %th Name
+          %th Station
+          %th Name
+          %th Station
+      %tbody
+        %tr
+          %td=app.known_firefighter_name or "N/A"
+          %td=app.known_firefighter_station
+          %td=app.known_firefighter_name_2 or "N/A"
+          %td=app.known_firefighter_station_2
+        %tr
+          %td=app.known_firefighter_name_3 or "N/A"
+          %td=app.known_firefighter_station_3
+          %td=app.known_firefighter_name_4 or "N/A"
+          %td=app.known_firefighter_station_4
+    %strong List four persons who are NOT related to you and who have definite knowledge of your qualifications and fitness for the position for which you are applying.  Do not repeat names of supervisors listed under Work Experience.
+    %table
+      %thead
+        %tr
+          %th Full Name
+          %th Phone
+          %th Relationship
+      %tbody
+        %tr
+          %td=app.reference_name or "N/A"
+          %td=app.reference_phone
+          %td=app.reference_relationship
+        %tr
+          %td=app.reference_name_2 or "N/A"
+          %td=app.reference_phone_2
+          %td=app.reference_relationship_2
+        %tr
+          %td=app.reference_name_3 or "N/A"
+          %td=app.reference_phone_3
+          %td=app.reference_relationship_3
+        %tr
+          %td=app.reference_name_4 or "N/A"
+          %td=app.reference_phone_4
+          %td=app.reference_relationship_4
+  #joining_reason.form_block
+    .form_block_header
+      .main Why do you want to join the Boone County Fire Protection District?
+    .tall_form_row{:style=>"height:125px;"}
+      .last_form_cell{:style=>"width:98%;"}
+        =app.reason_for_joining
