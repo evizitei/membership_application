@@ -25,6 +25,11 @@ class MembershipApplicationsController < ApplicationController
     render :action=>:edit unless @membership_application.update_attributes(params[:membership_application])
   end
   
+  def show
+    @position = Position.find(params[:position_id])
+    @membership_application = MembershipApplication.find(params[:id])
+  end
+  
   def find
     if params[:social_security_number]
       @applications = MembershipApplication.for_ssn(params[:social_security_number])

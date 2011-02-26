@@ -2,4 +2,6 @@
   %h2 Open Applications
   %ul
     -@applications.each do |app|
-      %li= app.applicant_name
+      %li
+        = link_to app.applicant_name,position_membership_application_path(app.position,app)
+        = link_to "(pdf)","#{position_membership_application_path(app.position,app)}.pdf"

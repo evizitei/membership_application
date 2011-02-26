@@ -26,6 +26,5 @@ Feature: Membership Application
       And I fill in "123-45-6789" for "social_security_number"
       And I press "Find my application"
       And I follow "Application for Volunteer"
-    Then show me the page
       And I press "Submit"
     Then I should see "Thanks for your application!"

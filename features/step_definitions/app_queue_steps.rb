@@ -10,7 +10,8 @@ end
 
 Given /^there is one application in the queue for "([^"]*)"$/ do |name|
   first_name,last_name = name.split(/\s/)
-  Factory(:pending_app,:first_name=>first_name,:last_name=>last_name)
+  position = Factory(:position)
+  Factory(:pending_app,:position_id=>position.id,:first_name=>first_name,:last_name=>last_name)
 end
 
 Given /^there is an application for "([^"]*)" with the SSN "([^"]*)"$/ do |position, ssn|

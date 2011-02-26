@@ -13,3 +13,10 @@ Feature: management of queue
       And I am logged in as an admin
     When I go to the homepage
     Then I should see "Stephen Dunkin"
+  
+  Scenario: viewing an individual application from the queue
+    Given there is one application in the queue for "Stephen Dunkin"
+      And I am logged in as an admin
+    When I go to the homepage
+      And I follow "Stephen Dunkin"
+    Then I should see "BOONE COUNTY FIRE PROTECTION DISTRICT"
