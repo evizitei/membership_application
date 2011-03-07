@@ -1,6 +1,8 @@
 %h2 Membership Application Site
 -if current_user
   = link_to "My Account",edit_user_path(current_user)
+  %br
+  = link_to "Manage Positions",positions_path
   = render_cell :application_queue, :display
 -else
   =link_to "Admin Sign in",new_user_session_path
