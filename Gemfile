@@ -8,6 +8,8 @@ gem "transitions", :require => ["transitions", "active_record/transitions"]
 gem 'cells'
 gem 'cancan'
 gem 'pdfkit'
+gem "aws-s3"
+gem "paperclip"
 
 gem 'pg', :group => :production
 
