@@ -1,0 +1,12 @@
+development:
+  access_key_id: AKIAI5YYCGVRB5WQZ6DQ
+  secret_access_key: uMUsQSxqSfrk61P7JOfBSoHv3Tcpmh2v9r936hAn/l86lxSXz
+  bucket: membership_dev
+test:
+  access_key_id: AKIAI5YYCGVRB5WQZ6DQ
+  secret_access_key: uMUsQSxqSfrk61P7JOfBSoHv3Tcpmh2v9r936hAn/l86lxSXz
+  bucket: membership_test
+production:
+  access_key_id: AKIAI5YYCGVRB5WQZ6DQ
+  secret_access_key: uMUsQSxqSfrk61P7JOfBSoHv3Tcpmh2v9r936hAn/l86lxSXz
+  bucket: membership_prod
