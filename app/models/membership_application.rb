@@ -14,6 +14,11 @@ class MembershipApplication < ActiveRecord::Base
   
   before_validation :format_ssn
   
+  has_attached_file :printable_pdf,:storage => :s3,
+                                   :s3_credentials => "#{Rails.root.to_s}/config/s3.yml",
+                                   :s3_permissions => :public_read,
+                                   :path => ":attachment/:style/:id.:extension"
+  
   state_machine do
     state :filling_out 
     state :submitted, :enter => lambda {|app| NotificationsMailer.new_application(app).deliver }
@@ -39,6 +44,19 @@ class MembershipApplication < ActiveRecord::Base
   def applicant_name
     "#{first_name} #{last_name}"
   end
+  
+  def send_to_pdf
+    template = File.join(Rails.root,"app","views","membership_applications","show.html.haml")
+    engine = Haml::Engine.new(template)
+    html = engine.render(Object.new, :@position => self.position, :@membership_application => self)
+    kit = PDFKit.new(html, :page_size => 'Letter')
+    kit.stylesheets << File.join(Rails.root,"public","stylesheets","application.css")
+    pdf = kit.to_pdf
+    file = kit.to_file(File.join(Rails.root,"tmp","application_#{self.id}.pdf"))
+    self.printable_pdf = file
+    self.save!
+  end
+  
 protected 
   def format_ssn
     self.social_security_number= social_security_number.gsub(/[\s|-]+/,"") if social_security_number
