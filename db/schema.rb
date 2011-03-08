@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110226180153) do
+ActiveRecord::Schema.define(:version => 20110308214302) do
 
   create_table "membership_applications", :force => true do |t|
     t.string   "last_name"
@@ -162,6 +162,10 @@ ActiveRecord::Schema.define(:version => 20110226180153) do
     t.string   "reference_relationship_4"
     t.string   "drivers_license_class"
     t.string   "encrypted_social_security_number"
+    t.string   "printable_pdf_file_name"
+    t.string   "printable_pdf_content_type"
+    t.integer  "printable_pdf_file_size"
+    t.datetime "printable_pdf_updated_at"
   end
 
   create_table "positions", :force => true do |t|
