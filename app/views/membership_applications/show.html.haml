@@ -1,14 +1,14 @@
 -app = @membership_application
 #header
   %div#org_title
-    =image_tag "bcfd_logo.png"
+    %image{:src=>"/images/bcfd_logo.png"}
     #header_text
       %h2 BOONE COUNTY FIRE PROTECTION DISTRICT
       %h3 2201 I-70 Dr NW - Columbia MO, 65202
       %h3 (573) 447 - 5000
       %h4 An Affirmative Action/Equal Opportunity Employer
       %h4#position_info= "Application for '#{@position.name}'"
-  =image_tag "bcfd_logo.png",:class=>"righty"
+  %image{:src=>"/images/bcfd_logo.png"}
 #application_form
   -standard_field_width = 30
   -cramped_field_width = 20
