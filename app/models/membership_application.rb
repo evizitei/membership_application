@@ -14,8 +14,6 @@ class MembershipApplication < ActiveRecord::Base
   
   before_validation :format_ssn
   
-  after_save :process_printable_version
-  
   has_attached_file :printable_pdf,:storage => :s3,
                                    :s3_credentials => "#{Rails.root.to_s}/config/s3.yml",
                                    :s3_permissions => :public_read,
@@ -45,11 +43,6 @@ class MembershipApplication < ActiveRecord::Base
 
   def applicant_name
     "#{first_name} #{last_name}"
-  end
-  
-  
-  def process_printable_version
-    self.delay.send_to_pdf
   end
   
   def send_to_pdf

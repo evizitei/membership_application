@@ -22,7 +22,11 @@ class MembershipApplicationsController < ApplicationController
   def update
     @position = Position.find(params[:position_id])
     @membership_application = MembershipApplication.find(params[:id])
-    render :action=>:edit unless @membership_application.update_attributes(params[:membership_application])
+    if @membership_application.update_attributes(params[:membership_application])
+      @membership_application.delay.send_to_pdf
+    else
+      render :action=>:edit
+    end
   end
   
   def show
