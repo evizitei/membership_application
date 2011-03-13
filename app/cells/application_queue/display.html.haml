@@ -4,3 +4,5 @@
     -@applications.each do |app|
       %li
         = link_to app.applicant_name,position_membership_application_path(app.position,app)
+        -if app.printable_pdf.exists?
+          =link_to "PDF",app.printable_pdf.url
