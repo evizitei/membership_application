@@ -46,19 +46,26 @@ class MembershipApplication < ActiveRecord::Base
   end
   
   def send_to_pdf
-    template = File.join(Rails.root,"app","views","membership_applications","show.html.haml")
-    engine = Haml::Engine.new(template)
-    html = engine.render(Object.new, :@position => self.position, :@membership_application => self)
-    kit = PDFKit.new(html, :page_size => 'Letter')
-    kit.stylesheets << File.join(Rails.root,"public","stylesheets","application.css")
-    pdf = kit.to_pdf
-    file = kit.to_file(File.join(Rails.root,"tmp","application_#{self.id}.pdf"))
-    self.printable_pdf = file
+    html = build_html
+    pdf = create_pdf_from(html)
+    self.printable_pdf = pdf
     self.save!
   end
   
 protected 
   def format_ssn
     self.social_security_number= social_security_number.gsub(/[\s|-]+/,"") if social_security_number
+  end
+  
+  def build_html
+    template = File.open(File.join(Rails.root,"app","views","membership_applications","show.html.haml"),"r")
+    engine = Haml::Engine.new(template.read)
+    engine.render(Object.new, :@position => self.position, :@membership_application => self)
+  end
+  
+  def create_pdf_from(html)
+    kit = PDFKit.new(html, :page_size => 'Letter')
+    kit.stylesheets << File.join(Rails.root,"public","stylesheets","application.css")
+    kit.to_file(File.join(Rails.root,"tmp","application_#{self.id}.pdf"))
   end
 end
