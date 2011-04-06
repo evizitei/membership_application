@@ -28,6 +28,9 @@ class MembershipApplication < ActiveRecord::Base
       transitions :to => :submitted, :from => :filling_out
     end
      
+    event :review do
+      transitions :to => :reviewed,:from=>:submitted
+    end
   end
   
   class << self

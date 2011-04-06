@@ -41,4 +41,10 @@ class MembershipApplicationsController < ApplicationController
       @applications = []
     end
   end
+  
+  def mark_reviewed
+    membership_application = MembershipApplication.find(params[:id])
+    membership_application.review!
+    render :json=>"{}"
+  end
 end

@@ -20,3 +20,12 @@ Feature: management of queue
     When I go to the homepage
       And I follow "Stephen Dunkin"
     Then I should see "BOONE COUNTY FIRE PROTECTION DISTRICT"
+    
+  @javascript
+  Scenario: reviewing an application
+    Given there is one application with a pdf in the queue for "Stephen Dunkin"
+      And I am logged in as an admin
+    When I go to the homepage
+      And I follow "PDF"
+    Then the application for "Stephen Dunkin" should be in the state "reviewed"
+  

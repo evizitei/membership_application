@@ -6,6 +6,7 @@ Membership::Application.routes.draw do
   end
   
   match "/membership_applications/find" => "membership_applications#find",:as=>:find_application
+  match "/membership_applications/mark_reviewed" => "membership_applications#mark_reviewed",:as=>:mark_app_reviewed
   
   resources :users
 

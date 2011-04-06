@@ -1,9 +1,10 @@
+=javascript_include_tag "application_queue"
 #application_queue
   %h2 Open Applications
   %ul
     -@applications.each do |app|
-      %li
+      %li.pending_application
         = link_to app.applicant_name,position_membership_application_path(app.position,app)
         -if app.printable_pdf.exists?
           = "--"
-          =link_to "PDF",app.printable_pdf.url
+          =link_to "PDF",app.printable_pdf.url,:class=>"pdf_link",'data-app_id'=>app.id
