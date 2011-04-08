@@ -372,6 +372,7 @@
         .last_form_cell{:style=>"width:98%;"}
           =m.text_area :reason_for_joining
     =submit_tag "Submit"     
-%div.modal
-  %p 
-    This is going to be hard work.  It will take a lot of time.  You will not get paid.
+-if @membership_application.new_record?
+  %div.modal
+    %p 
+      This is going to be hard work.  It will take a lot of time.  You will not get paid.
