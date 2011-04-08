@@ -11,7 +11,13 @@ class MembershipApplicationsController < ApplicationController
       redirect_to "/driving_disaster/gameboard.html"
       return
     end
-    render :action=>:new unless @membership_application.save
+    
+    if @membership_application.save
+      @membership_application.submit!
+      @membership_application.delay.send_to_pdf
+    else
+      render :new
+    end
   end
   
   def edit
@@ -23,9 +29,10 @@ class MembershipApplicationsController < ApplicationController
     @position = Position.find(params[:position_id])
     @membership_application = MembershipApplication.find(params[:id])
     if @membership_application.update_attributes(params[:membership_application])
+      @membership_application.submit!
       @membership_application.delay.send_to_pdf
     else
-      render :action=>:edit
+      render :edit
     end
   end
   

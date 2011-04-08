@@ -20,11 +20,12 @@ Feature: Membership Application
 
   Scenario: editing an application
     Given there is an active position named "Volunteer"
-      And there is an application for "Volunteer" with the SSN "123-45-6789"
+      And there is an application for "Volunteer" with the SSN "123-45-6789" in state "reviewed"
     When I go to the homepage 
-      And I follow "Finish my application"
+      And I follow "Finish/Edit my application"
       And I fill in "123-45-6789" for "social_security_number"
       And I press "Find my application"
       And I follow "Application for Volunteer"
       And I press "Submit"
     Then I should see "Thanks for your application!"
+      And the application with SSN "123-45-6789" should be in state "submitted"

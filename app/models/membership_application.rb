@@ -25,7 +25,7 @@ class MembershipApplication < ActiveRecord::Base
     state :reviewed
 
     event :submit do
-      transitions :to => :submitted, :from => :filling_out
+      transitions :to => :submitted, :from => [:filling_out,:reviewed,:submitted]
     end
      
     event :review do
