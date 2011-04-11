@@ -21,6 +21,16 @@ Feature: management of queue
       And I follow "Stephen Dunkin"
     Then I should see "BOONE COUNTY FIRE PROTECTION DISTRICT"
     
+  Scenario: viewing previous applications for a given position
+    Given there is an active position named "Volunteer"
+      And there is a reviewed application for "Volunteer" for "Stephen Dunkin"
+      And there is a reviewed application for "Volunteer" for "Ethan Vizitei"
+      And I am logged in as an admin
+    When I go to the positions index
+      And I follow "applications"
+    Then I should see "Stephen Dunkin"
+      And I should see "Ethan Vizitei"
+    
   @javascript
   Scenario: reviewing an application
     Given there is one application with a pdf in the queue for "Stephen Dunkin"

@@ -14,6 +14,13 @@ Given /^there is one application in the queue for "([^"]*)"$/ do |name|
   Factory(:pending_app,:position_id=>position.id,:first_name=>first_name,:last_name=>last_name)
 end
 
+Given /^there is a reviewed application for "([^"]*)" for "([^"]*)"$/ do |position, name|
+  position = Position.find_by_name(position)
+  first_name,last_name = name.split(/\s/)
+  Factory(:reviewed_app,:position_id=>position.id,:first_name=>first_name,:last_name=>last_name)
+end
+
+
 Given /^there is one application with a pdf in the queue for "([^"]*)"$/ do |name|
   first_name,last_name = name.split(/\s/)
   position = Factory(:position)

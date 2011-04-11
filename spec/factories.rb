@@ -9,6 +9,10 @@ Factory.define :pending_app,:parent=>:membership_application do |m|
   m.state "submitted"
 end
 
+Factory.define :reviewed_app,:parent=>:membership_application do |m|
+  m.state "reviewed"
+end
+
 Factory.define :user do |u|
 end
 

@@ -41,6 +41,11 @@ class MembershipApplicationsController < ApplicationController
     @membership_application = MembershipApplication.find(params[:id])
   end
   
+  def index
+    @position = Position.find(params[:position_id])
+    @membership_applications = @position.membership_applications
+  end
+  
   def find
     if params[:social_security_number]
       @applications = MembershipApplication.for_ssn(params[:social_security_number])
