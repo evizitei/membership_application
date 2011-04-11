@@ -1,0 +1,8 @@
+-@applications.each do |app|
+  =link_to "Copy data from Application for '#{app.position.name}'",new_position_membership_application_path(@position,:copy_from=>app.id)
+=form_tag do
+  Social Security Number:
+  =hidden_field_tag :position_id,@position.id
+  =text_field_tag :social_security_number,params[:social_security_number]
+  %br
+  =submit_tag "Load my applications"

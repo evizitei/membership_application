@@ -39,6 +39,10 @@ Given /^there is an application for "([^"]*)" with the SSN "([^"]*)" in state "(
   app.update_attributes!(:state=>state)
 end
 
+Given /^the application with the SSN "([^"]*)" should have a last name of "([^"]*)"$/ do |ssn, last_name|
+  app = MembershipApplication.for_ssn(ssn).last
+  app.update_attributes!(:last_name=>last_name)
+end
 
 Then /^the application for "([^"]*)" should be in the state "([^"]*)"$/ do |name, state|
   first_name,last_name = name.split(/\s/)

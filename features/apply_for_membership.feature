@@ -29,3 +29,17 @@ Feature: Membership Application
       And I press "Submit"
     Then I should see "Thanks for your application!"
       And the application with SSN "123-45-6789" should be in state "submitted"
+  
+  Scenario: copying from another application
+    Given there is an inactive position named "Volunteer"
+      And there is an active position named "Training Bitch"
+      And there is an application for "Volunteer" with the SSN "123-45-6789" in state "reviewed"
+      And the application with the SSN "123-45-6789" should have a last name of "Creamer" 
+    When I am on the application page for "Training Bitch"
+    Then I should see "Application for 'Training Bitch'"
+      And I follow "Load my data from another application"
+      And I fill in "123-45-6789" for "social_security_number"
+      And I press "Load my applications"
+      And I follow "Copy data from Application for 'Volunteer'"
+    Then I should see "Application for 'Training Bitch'"
+      And the "membership_application_last_name" field should contain "Creamer"

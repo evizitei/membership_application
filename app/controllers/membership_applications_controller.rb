@@ -2,6 +2,10 @@ class MembershipApplicationsController < ApplicationController
   def new
     @position = Position.find(params[:position_id])
     @membership_application = MembershipApplication.new(:position=>@position)
+    if params[:copy_from]
+      copy_app = MembershipApplication.find(params[:copy_from])
+      @membership_application.attributes = copy_app.attributes
+    end
   end
   
   def create
@@ -59,4 +63,14 @@ class MembershipApplicationsController < ApplicationController
     membership_application.review!
     render :json=>"{}"
   end
+  
+  def load
+    @position = Position.find(params[:position_id])
+    if params[:social_security_number]
+      @applications = MembershipApplication.for_ssn(params[:social_security_number])
+    else
+      @applications = []
+    end
+  end
+
 end

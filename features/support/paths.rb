@@ -12,9 +12,9 @@ module NavigationHelpers
       '/'
     when /the login page/
       new_user_session_path
-    when /the application page for (.*)/
+    when /the application page for "(.*)"/
       position = Position.find_by_name($1)
-      new_position_membership_application_url(Factory(:position))
+      new_position_membership_application_url(position)
     when /the positions index/
       positions_path
     else
