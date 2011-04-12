@@ -1,0 +1,9 @@
+%h2 Membership Application Site
+.open_spots
+  %h3 Our closed positions
+  -@positions.each do |position|
+    .position_row
+      %h4.name=position.name
+      .description=position.description
+      =link_to "notify me when this position is open",new_position_waiting_list_record_path(position)
+=link_to "Open Positions",root_path

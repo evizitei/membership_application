@@ -1,0 +1,6 @@
+%h2= "Waiting List for #{@position.name}"
+=form_for([@position,@waiting_list_record]) do |f|
+  =f.hidden_field :position_id
+  =f.label :email
+  =f.text_field :email
+  =submit_tag "Add me to the waiting list"

@@ -1,10 +1,19 @@
 class Position < ActiveRecord::Base
   has_many :membership_applications
+  has_many :waiting_list_records
   validates_presence_of :name
   
   class << self
     def open
       where(:active=>true)
     end
+    
+    def closed
+      where(["active != ?",true])
+    end
+  end
+  
+  def waiting_list
+    waiting_list_records.map(&:email)
   end
 end

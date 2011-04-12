@@ -1,5 +1,5 @@
 class PositionsController < ApplicationController
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!,:except=>[:closed]
   
   def index
     @positions = Position.all
@@ -29,5 +29,9 @@ class PositionsController < ApplicationController
     else
       render :action=>:edit
     end
+  end
+  
+  def closed
+    @positions = Position.closed
   end
 end

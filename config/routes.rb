@@ -1,14 +1,15 @@
 Membership::Application.routes.draw do
   devise_for :users
 
+  match "/positions/closed" => "positions#closed",:as=>:closed_positions
   resources :positions do
     resources :membership_applications
+    resources :waiting_list_records
   end
   
   match "/membership_applications/find" => "membership_applications#find",:as=>:find_application
   match "/membership_applications/mark_reviewed" => "membership_applications#mark_reviewed",:as=>:mark_app_reviewed
   match "/membership_applications/load" => "membership_applications#load",:as=>:load_application_data
-  
   resources :users
 
   root :to=>"welcome#index"
