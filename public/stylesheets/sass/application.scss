@@ -63,6 +63,22 @@ div#header{
   width: $page_width;
 }
 
+#positions{
+  .position_row{
+    border: 2px solid black;
+    margin: 5px;
+    width: 400px;
+  } 
+  
+  .open{
+    background-color:green;
+  }
+  
+  .closed{
+    background-color:red;
+  }
+}
+
 @mixin cellish {
   padding-left: $standard_padding;
   padding-top: $standard_padding;

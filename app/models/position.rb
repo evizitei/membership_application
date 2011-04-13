@@ -16,4 +16,18 @@ class Position < ActiveRecord::Base
   def waiting_list
     waiting_list_records.map(&:email)
   end
+  
+  def open!
+    self.update_attributes!(:active=>true)
+  end
+  
+  def open_and_notify!
+    open!
+    self.delay.notify!
+  end
+  
+protected
+  def notify!
+    NotificationsMailer.open_position(self).deliver
+  end
 end

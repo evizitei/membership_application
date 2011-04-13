@@ -34,4 +34,14 @@ class PositionsController < ApplicationController
   def closed
     @positions = Position.closed
   end
+  
+  def force_open
+    @position = Position.find(params[:position_id])
+    if(params[:notify] == "yes")
+      @position.open_and_notify!
+    else
+      @position.open!
+    end
+    redirect_to :action=>:index
+  end
 end

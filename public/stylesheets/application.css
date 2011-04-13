@@ -35,6 +35,15 @@ div#header {
 .form_block {
   width: 800px; }
 
+#positions .position_row {
+  border: 2px solid black;
+  margin: 5px;
+  width: 400px; }
+#positions .open {
+  background-color: green; }
+#positions .closed {
+  background-color: red; }
+
 .form_row {
   margin-top: 0px;
   margin-bottom: 10px;

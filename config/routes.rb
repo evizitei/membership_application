@@ -2,6 +2,7 @@ Membership::Application.routes.draw do
   devise_for :users
 
   match "/positions/closed" => "positions#closed",:as=>:closed_positions
+  match "/positions/force_open" => "positions#force_open",:as=>:open_position
   resources :positions do
     resources :membership_applications
     resources :waiting_list_records
