@@ -6,13 +6,13 @@
       = position.name
       = link_to "edit",edit_position_path(position)
       = link_to "applications",position_membership_applications_path(position)
-      %button.open_button{:value=>"Open Position"}
+      %button.open_button Open Position
 =link_to "add position",new_position_path
 #open_position_dialog.modal
   =form_tag(open_position_path,:id=>"open_position_form") do
     =hidden_field_tag :position_id
     =hidden_field_tag :notify
     %p How do you want this to go down?
-    %button#notify_list{:value=>"Notify Waiting List"}
-    %button#soft_open{:value=>"Open Silently"}
+    %button#notify_list Notify Waiting List
+    %button#soft_open Open Silently
   

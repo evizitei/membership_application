@@ -220,3 +220,9 @@ table {
   table th {
     background-color: #CCCCCC;
     font-weight: bold; }
+
+.modal {
+  display: none; }
+
+.field_with_errors {
+  display: inline; }
