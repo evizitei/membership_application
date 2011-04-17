@@ -1,4 +1,6 @@
 class MembershipApplicationsController < ApplicationController
+  layout "nifty",:except=>[:new,:edit]
+  
   def new
     @position = Position.find(params[:position_id])
     @membership_application = MembershipApplication.new(:position=>@position)
@@ -6,6 +8,7 @@ class MembershipApplicationsController < ApplicationController
       copy_app = MembershipApplication.find(params[:copy_from])
       @membership_application.attributes = copy_app.attributes
     end
+    render :layout=>"application"
   end
   
   def create
@@ -27,6 +30,7 @@ class MembershipApplicationsController < ApplicationController
   def edit
     @position = Position.find(params[:position_id])
     @membership_application = MembershipApplication.find(params[:id])
+    render :layout=>"application"
   end
   
   def update

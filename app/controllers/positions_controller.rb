@@ -1,4 +1,5 @@
 class PositionsController < ApplicationController
+  layout "nifty"
   before_filter :authenticate_user!,:except=>[:closed]
   
   def index

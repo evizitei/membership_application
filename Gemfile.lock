@@ -101,6 +101,7 @@ GEM
     mime-types (1.16)
     mocha (0.9.10)
       rake
+    nifty-generators (0.4.6)
     nokogiri (1.4.4)
     paperclip (2.3.8)
       activerecord
@@ -182,6 +183,7 @@ DEPENDENCIES
   fakeweb
   haml
   launchy
+  nifty-generators
   paperclip
   pdfkit
   pg

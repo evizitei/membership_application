@@ -1,4 +1,6 @@
 class WaitingListRecordsController < ApplicationController
+  layout "nifty"
+  
   def new
     @position = Position.find(params[:position_id])
     @waiting_list_record = WaitingListRecord.new(:position_id=>@position.id)

@@ -28,4 +28,5 @@ group :development,:test do
   gem 'factory_girl_rails'
   gem 'fakeweb'
   gem 'timecop'
+  gem "nifty-generators"
 end
