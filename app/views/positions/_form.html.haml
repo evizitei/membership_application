@@ -1,3 +1,4 @@
+=javascript_include_tag "position_form"
 = form_for(position) do |f|
   = render "shared/error_messages", :target => position
   %fieldset
@@ -13,4 +14,21 @@
       = f.label :active
       %br
       = f.check_box :active
+    #position_skills
+      %h2 Skills/Certifications
+      = f.fields_for :skills do |skill_fields|
+        .skill
+          .field
+            = skill_fields.text_field :name
+            = skill_fields.hidden_field :_destroy
+            %a.skill_killer{:href=>"#"} remove
+    %input#skill_adder{:type=>"button",:value=>"Add a Skill"}
   =submit_tag "Save"
+
+.templates{:style=>"display:none;"}
+  #skill_template
+    .skill
+      .field
+        %input{:type=>"text",:name=>"position[skills_attributes][IDX][name]",:id=>"position_skills_attributes_IDX_name"}
+        %input{:type=>"hidden",:name=>"position[skills_attributes][IDX][_destroy]",:id=>"position_skills_attributes_IDX__destroy"}
+        %a.skill_killer{:href=>"#"} remove

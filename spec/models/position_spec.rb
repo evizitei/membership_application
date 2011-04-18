@@ -14,4 +14,16 @@ describe Position do
     it { should include(@open_position) }
     it { should_not include(@closed_position) }
   end
+  
+  describe "skills collection" do
+    it "can create with multiple skills" do
+      params = {:name => 'some position', 
+                :skills_attributes => [
+                  {:name => 'Skill 1' },
+                  {:name => 'Skill 2' }]
+        }
+      position = Position.create!(params)
+      position.reload.skills.size.should == 2
+    end
+  end
 end

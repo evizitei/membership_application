@@ -1,6 +1,10 @@
 class Position < ActiveRecord::Base
   has_many :membership_applications
   has_many :waiting_list_records
+  has_many :skills
+  
+  accepts_nested_attributes_for :skills
+  
   validates_presence_of :name
   
   class << self
