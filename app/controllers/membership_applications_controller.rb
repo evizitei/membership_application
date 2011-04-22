@@ -7,6 +7,7 @@ class MembershipApplicationsController < ApplicationController
     if params[:copy_from]
       copy_app = MembershipApplication.find(params[:copy_from])
       @membership_application.attributes = copy_app.attributes
+      @membership_application.social_security_number = copy_app.social_security_number
     end
     render :layout=>"application"
   end

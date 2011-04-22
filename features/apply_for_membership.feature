@@ -43,3 +43,4 @@ Feature: Membership Application
       And I follow "Copy data from Application for 'Volunteer'"
     Then I should see "Application for 'Training Bitch'"
       And the "membership_application_last_name" field should contain "Creamer"
+      And the "membership_application_social_security_number" field should contain "123456789"
