@@ -24,7 +24,7 @@ class MembershipApplicationsController < ApplicationController
       @membership_application.submit!
       @membership_application.delay.send_to_pdf
     else
-      render :new
+      render :new,:layout=>"application"
     end
   end
   
@@ -41,13 +41,14 @@ class MembershipApplicationsController < ApplicationController
       @membership_application.submit!
       @membership_application.delay.send_to_pdf
     else
-      render :edit
+      render :edit,:layout=>"application"
     end
   end
   
   def show
     @position = Position.find(params[:position_id])
     @membership_application = MembershipApplication.find(params[:id])
+    render :layout=>"application"
   end
   
   def index
