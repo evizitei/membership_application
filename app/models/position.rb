@@ -21,6 +21,10 @@ class Position < ActiveRecord::Base
     waiting_list_records.map(&:email)
   end
   
+  def close!
+    self.update_attributes!(:active=>false)
+  end
+  
   def open!
     self.update_attributes!(:active=>true)
   end

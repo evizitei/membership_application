@@ -6,7 +6,11 @@
       = position.name
       = link_to "edit",edit_position_path(position)
       = link_to "applications",position_membership_applications_path(position)
-      %button.open_button Open Position
+      -if position.active
+        =link_to close_position_path(:position_id=>position.id) do
+          %button.close_button Close Position
+      -else
+        %button.open_button Open Position
 =link_to "add position",new_position_path
 #open_position_dialog.modal
   =form_tag(open_position_path,:id=>"open_position_form") do

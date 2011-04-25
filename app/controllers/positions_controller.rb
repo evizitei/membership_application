@@ -45,4 +45,10 @@ class PositionsController < ApplicationController
     end
     redirect_to :action=>:index
   end
+  
+  def force_close
+    @position = Position.find(params[:position_id])
+    @position.close!
+    redirect_to :action=>:index
+  end
 end

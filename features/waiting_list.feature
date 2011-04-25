@@ -21,3 +21,13 @@ Feature: email waiting list for closed positions
       And I press "Notify Waiting List"
     Then I should be on the positions index
       And I should see "Training Bitch" within ".open"    
+      
+  @javascript
+  Scenario: emailing the waiting list
+    Given there is an active position named "Training Bitch"
+      And I am logged in
+    When I go to the positions index
+    Then I should see "Training Bitch" within ".open"    
+    When I press "Close Position"
+    Then I should be on the positions index
+      And I should see "Training Bitch" within ".closed"

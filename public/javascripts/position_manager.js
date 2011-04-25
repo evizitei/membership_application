@@ -18,6 +18,7 @@ function open_quiet(){
 
 $(function(){
   $(".open_button").bind("click",open_position_dialog);
+  $(".close_button").bind("click",close_position);
   $("#notify_list").bind("click",open_loud);
   $("#soft_open").bind("click",open_quiet);
 });
