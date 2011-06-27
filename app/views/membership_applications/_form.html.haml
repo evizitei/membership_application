@@ -1,4 +1,5 @@
 =javascript_include_tag "membership_application"
+-require "state"
 #header
   %div#org_title
     =image_tag "bcfd_logo.png"
@@ -10,6 +11,7 @@
       %h4#position_info= "Application for '#{position.name}'"
   =image_tag "bcfd_logo.png",:class=>"righty"
 #application_form
+  -wide_field_width = 50
   -standard_field_width = 30
   -cramped_field_width = 20
   -date_width = 9
@@ -36,13 +38,13 @@
       .form_row
         .form_cell{:style=>"width:39%;"}
           =m.label :address,"Address: (Street)"
-          =m.text_field :address,:size=>standard_field_width
+          =m.text_field :address,:size=>wide_field_width
         .form_cell{:style=>"width:30%;"}
           =m.label :city,"(City)"
           =m.text_field :city,:size=>standard_field_width
         .form_cell{:style=>"width:10%;"}
           =m.label :address_state,"(State)"
-          =m.text_field :address_state,:size=>2
+          =m.select :address_state,options_for_select(State.short_names)
         .last_form_cell{:style=>"width:19%;"}
           =m.label :zip,"(Zip)"
           =m.text_field :zip,:size=>5
@@ -56,7 +58,7 @@
       .form_row
         .form_cell{:style=>"width:50%;"}
           =m.label :email,"E-mail:"
-          =m.text_field :email
+          =m.text_field :email,:size=>wide_field_width
         .last_form_cell{:style=>"width:49%;"}
           =m.label :may_contact_at_work,"May we contact you at work?"
           =m.radio_button :may_contact_at_work,true
