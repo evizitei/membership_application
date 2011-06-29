@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110629020444) do
+ActiveRecord::Schema.define(:version => 20110629023411) do
 
   create_table "delayed_jobs", :force => true do |t|
     t.integer  "priority",   :default => 0
@@ -182,6 +182,9 @@ ActiveRecord::Schema.define(:version => 20110629020444) do
     t.string   "employer_position_held"
     t.string   "employer_position_held_2"
     t.string   "employer_position_held_3"
+    t.string   "employer_location"
+    t.string   "employer_location_2"
+    t.string   "employer_location_3"
   end
 
   create_table "positions", :force => true do |t|
