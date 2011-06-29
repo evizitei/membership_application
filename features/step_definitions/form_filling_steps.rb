@@ -10,7 +10,7 @@ When /^I fill out the membership form completely$/ do
   And %Q{I fill in "Social Security Number" with "123-45-6789"}
   And %Q{I fill in "Address: (Street)" with "123 a street"}
   And %Q{I fill in "(City)" with "Columbia"}
-  And %Q{I fill in "(State)" with "Mo"}
+  And %Q{I select "MO" from "(State)"}
   And %Q{I fill in "(Zip)" with "65203"}
   And %Q{I fill in "Telephone Number: (Primary)" with "555-123-5678"}
   And %Q{I fill in "(Secondary)" with "665-123-9067"}
@@ -28,16 +28,19 @@ When /^I fill out the membership form completely$/ do
   And %Q{I choose "membership_application_has_traffic_violations_true"}
   And %Q{I fill in "membership_application_traffic_violations_details" with "one pov fender bender"}
   And %Q{I fill in "membership_application_employer_name" with "research 2 practice"}
+  And %Q{I fill in "membership_application_employer_position_held" with "Techie"}
   And %Q{I fill in "membership_application_employer_phone" with "123-456-9876"}
   And %Q{I fill in "membership_application_employer_start" with "3/12/2008"}
   And %Q{I fill in "membership_application_employer_stop" with "5/15/2010"}
   And %Q{I fill in "membership_application_employer_exit_reason" with "Not Yet"}
   And %Q{I fill in "membership_application_employer_name_2" with "research 2 practice"}
+  And %Q{I fill in "membership_application_employer_position_held_2" with "Techie"}
   And %Q{I fill in "membership_application_employer_phone_2" with "123-456-9876"}
   And %Q{I fill in "membership_application_employer_start_2" with "3/12/2008"}
   And %Q{I fill in "membership_application_employer_stop_2" with "5/15/2010"}
   And %Q{I fill in "membership_application_employer_exit_reason_2" with "Not Yet"}
   And %Q{I fill in "membership_application_employer_name_3" with "research 2 practice"}
+  And %Q{I fill in "membership_application_employer_position_held_3" with "Techie"}
   And %Q{I fill in "membership_application_employer_phone_3" with "123-456-9876"}
   And %Q{I fill in "membership_application_employer_start_3" with "3/12/2008"}
   And %Q{I fill in "membership_application_employer_stop_3" with "5/15/2010"}
