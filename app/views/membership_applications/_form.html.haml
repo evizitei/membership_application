@@ -213,11 +213,16 @@
       %table
         %thead
           %tr
-            %th
-              Institution -- Location
+            %th{:style=>"text-align:center;"}
+              %span Institution 
+              ="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;".html_safe
+              ="--" 
+              ="&nbsp;".html_safe
+              %span Location
+              ="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;".html_safe
             %th From Date
             %th To Date
-            %th Units Completed
+            %th Units
             %th Major
             %th Degree
             %th Year
@@ -230,7 +235,7 @@
             %td=m.text_field :college_start_date,:size=>date_width
             %td=m.text_field :college_stop_date,:size=>date_width
             %td=m.text_field :college_units_completed,:size=>date_width
-            %td=m.text_field :college_major,:size=>date_width
+            %td=m.text_field :college_major,:size=>cramped_field_width
             %td=m.text_field :college_degree,:size=>date_width
             %td=m.text_field :college_year,:size=>4
           %tr
@@ -241,7 +246,7 @@
             %td=m.text_field :college_start_date_2,:size=>date_width
             %td=m.text_field :college_stop_date_2,:size=>date_width
             %td=m.text_field :college_units_completed_2,:size=>date_width
-            %td=m.text_field :college_major_2,:size=>date_width
+            %td=m.text_field :college_major_2,:size=>cramped_field_width
             %td=m.text_field :college_degree_2,:size=>date_width
             %td=m.text_field :college_year_2,:size=>4
           %tr
@@ -252,7 +257,7 @@
             %td=m.text_field :college_start_date_3,:size=>date_width
             %td=m.text_field :college_stop_date_3,:size=>date_width
             %td=m.text_field :college_units_completed_3,:size=>date_width
-            %td=m.text_field :college_major_3,:size=>date_width
+            %td=m.text_field :college_major_3,:size=>cramped_field_width
             %td=m.text_field :college_degree_3,:size=>date_width
             %td=m.text_field :college_year_3,:size=>4
     #training.form_block
