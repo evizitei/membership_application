@@ -266,21 +266,21 @@
       %table
         %thead
           %tr
-            %th Institution - Business or Trade School
+            %th Institution
             %th Course
             %th From Date
             %th To Date
             %th Hours Completed
         %tbody
           %tr
-            %td=m.text_field :training_institution,:size=>cramped_field_width
-            %td=m.text_field :training_course,:size=>cramped_field_width
+            %td=m.text_field :training_institution,:size=>standard_field_width
+            %td=m.text_field :training_course,:size=>standard_field_width
             %td=m.text_field :training_start_date,:size=>date_width
             %td=m.text_field :training_stop_date,:size=>date_width
             %td=m.text_field :training_hours,:size=>date_width
           %tr
-            %td=m.text_field :training_institution_2,:size=>cramped_field_width
-            %td=m.text_field :training_course_2,:size=>cramped_field_width
+            %td=m.text_field :training_institution_2,:size=>standard_field_width
+            %td=m.text_field :training_course_2,:size=>standard_field_width
             %td=m.text_field :training_start_date_2,:size=>date_width
             %td=m.text_field :training_stop_date_2,:size=>date_width
             %td=m.text_field :training_hours_2,:size=>date_width
