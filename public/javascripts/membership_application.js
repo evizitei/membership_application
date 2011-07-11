@@ -1,6 +1,7 @@
 $(function(){
   dialog_init();
   date_selector_init();
+  format_fields_init();
 });
 
 function dialog_init(){
@@ -19,4 +20,8 @@ function date_selector_init(){
   			changeMonth: true,
   			changeYear: true
   		});
+}
+
+function format_fields_init(){
+  $(".phone_input").mask("(999) 999-9999");
 }
