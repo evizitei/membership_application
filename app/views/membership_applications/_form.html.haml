@@ -14,7 +14,7 @@
   -wide_field_width = 50
   -standard_field_width = 30
   -cramped_field_width = 20
-  -date_width = 9
+  -date_width = 10
   =form_for [position,app] do |m|
     = render "shared/error_messages", :target => app
     =m.hidden_field :position_id,:value=>@position.id
@@ -300,17 +300,17 @@
             %td=m.text_field :certification_name,:size=>cramped_field_width
             %td=m.text_field :certification_number,:size=>cramped_field_width
             %td=m.text_field :certification_issuer,:size=>cramped_field_width
-            %td=m.text_field :certification_expiration,:size=>date_width
+            %td=m.text_field :certification_expiration,:size=>date_width,:class=>"datepicker"
           %tr
             %td=m.text_field :certification_name_2,:size=>cramped_field_width
             %td=m.text_field :certification_number_2,:size=>cramped_field_width
             %td=m.text_field :certification_issuer_2,:size=>cramped_field_width
-            %td=m.text_field :certification_expiration_2,:size=>date_width
+            %td=m.text_field :certification_expiration_2,:size=>date_width,:class=>"datepicker"
           %tr
             %td=m.text_field :certification_name_3,:size=>cramped_field_width
             %td=m.text_field :certification_number_3,:size=>cramped_field_width
             %td=m.text_field :certification_issuer_3,:size=>cramped_field_width
-            %td=m.text_field :certification_expiration_3,:size=>date_width
+            %td=m.text_field :certification_expiration_3,:size=>date_width,:class=>"datepicker"
     #previous_experience.form_block
       .form_block_header 
         .main Pervious Fire Service/EMS Experience
