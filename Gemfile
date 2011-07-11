@@ -11,6 +11,7 @@ gem 'pdfkit'
 gem "aws-s3"
 gem "paperclip"
 gem "delayed_job"
+gem "rack-ssl"
 
 gem 'pg', :group => :production
 
