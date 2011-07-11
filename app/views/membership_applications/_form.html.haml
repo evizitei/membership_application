@@ -68,7 +68,7 @@
       .tall_form_row
         .form_cell{:style=>"width:50%;"}
           =m.label :birth_date,"Date of Birth:"
-          =m.text_field :birth_date
+          =m.text_field :birth_date,:class=>"datepicker"
           %br
           %i (mm/dd/yyyy)
         .last_form_cell{:style=>"width:49%;"}
@@ -128,9 +128,9 @@
           =m.text_field :employer_location,:size=>cramped_field_width
         .form_cell{:style=>"width:12%;"}
           =m.label :employer_start,"Start:"
-          =m.text_field :employer_start,:size=>date_width
+          =m.text_field :employer_start,:size=>date_width,:class=>"datepicker"
           =m.label :employer_stop,"Ending:"
-          =m.text_field :employer_stop,:size=>date_width
+          =m.text_field :employer_stop,:size=>date_width,:class=>"datepicker"
         .last_form_cell{:style=>"width:38%;"}
           =m.label :employer_exit_reason,"Reason for Leaving:"
           =m.text_area :employer_exit_reason,:class=>"small_area"
@@ -147,9 +147,9 @@
           =m.text_field :employer_location_2,:size=>cramped_field_width
         .form_cell{:style=>"width:12%;"}
           =m.label :employer_start_2,"Start:"
-          =m.text_field :employer_start_2,:size=>date_width
+          =m.text_field :employer_start_2,:size=>date_width,:class=>"datepicker"
           =m.label :employer_stop_2,"Ending:"
-          =m.text_field :employer_stop_2,:size=>date_width
+          =m.text_field :employer_stop_2,:size=>date_width,:class=>"datepicker"
         .last_form_cell{:style=>"width:38%;"}
           =m.label :employer_exit_reason_2,"Reason for Leaving:"
           =m.text_area :employer_exit_reason_2,:class=>"small_area"
@@ -166,9 +166,9 @@
           =m.text_field :employer_location_3,:size=>cramped_field_width
         .form_cell{:style=>"width:12%;"}
           =m.label :employer_start_3,"Start:"
-          =m.text_field :employer_start_3,:size=>date_width
+          =m.text_field :employer_start_3,:size=>date_width,:class=>"datepicker"
           =m.label :employer_stop_3,"Ending:"
-          =m.text_field :employer_stop_3,:size=>date_width
+          =m.text_field :employer_stop_3,:size=>date_width,:class=>"datepicker"
         .last_form_cell{:style=>"width:38%;"}
           =m.label :employer_exit_reason_3,"Reason for Leaving:"
           =m.text_area :employer_exit_reason_3,:class=>"small_area"
@@ -184,9 +184,9 @@
           =m.text_field :military_rank,:size=>cramped_field_width
         .form_cell{:style=>"width:20%;"}
           =m.label :military_start_date,"Start Date:"
-          =m.text_field :military_start_date,:size=>date_width
+          =m.text_field :military_start_date,:size=>date_width,:class=>"datepicker"
           =m.label :military_discharge_date,"Discharge Date:"
-          =m.text_field :military_discharge_date,:size=>date_width
+          =m.text_field :military_discharge_date,:size=>date_width,:class=>"datepicker"
         .last_form_cell{:style=>"width:38%;"}
           =m.label :military_training,"Duties/Special Training:"
           =m.text_area :military_training,:class=>"small_area"
@@ -204,9 +204,9 @@
           =m.text_field :high_school_state,:size=>2
         .last_form_cell{:style=>"width:25%;"}
           =m.label :high_school_graduation_date,"Date Graduated:"
-          =m.text_field :high_school_graduation_date,:size=>date_width
+          =m.text_field :high_school_graduation_date,:size=>date_width,:class=>"datepicker"
           =m.label :high_school_ged_date,"Date of GED:"
-          =m.text_field :high_school_ged_date,:size=>date_width
+          =m.text_field :high_school_ged_date,:size=>date_width,:class=>"datepicker"
     #college.form_block
       .form_block_header
         .main College/University
@@ -232,8 +232,8 @@
               =m.text_field :college_name,:size=>cramped_field_width
               ="--"
               =m.text_field :college_location,:size=>cramped_field_width
-            %td=m.text_field :college_start_date,:size=>date_width
-            %td=m.text_field :college_stop_date,:size=>date_width
+            %td=m.text_field :college_start_date,:size=>date_width,:class=>"datepicker"
+            %td=m.text_field :college_stop_date,:size=>date_width,:class=>"datepicker"
             %td=m.text_field :college_units_completed,:size=>date_width
             %td=m.text_field :college_major,:size=>cramped_field_width
             %td=m.text_field :college_degree,:size=>date_width
@@ -243,8 +243,8 @@
               =m.text_field :college_name_2,:size=>cramped_field_width
               ="--"
               =m.text_field :college_location_2,:size=>cramped_field_width
-            %td=m.text_field :college_start_date_2,:size=>date_width
-            %td=m.text_field :college_stop_date_2,:size=>date_width
+            %td=m.text_field :college_start_date_2,:size=>date_width,:class=>"datepicker"
+            %td=m.text_field :college_stop_date_2,:size=>date_width,:class=>"datepicker"
             %td=m.text_field :college_units_completed_2,:size=>date_width
             %td=m.text_field :college_major_2,:size=>cramped_field_width
             %td=m.text_field :college_degree_2,:size=>date_width
@@ -254,8 +254,8 @@
               =m.text_field :college_name_3,:size=>cramped_field_width
               ="--"
               =m.text_field :college_location_3,:size=>cramped_field_width
-            %td=m.text_field :college_start_date_3,:size=>date_width
-            %td=m.text_field :college_stop_date_3,:size=>date_width
+            %td=m.text_field :college_start_date_3,:size=>date_width,:class=>"datepicker"
+            %td=m.text_field :college_stop_date_3,:size=>date_width,:class=>"datepicker"
             %td=m.text_field :college_units_completed_3,:size=>date_width
             %td=m.text_field :college_major_3,:size=>cramped_field_width
             %td=m.text_field :college_degree_3,:size=>date_width
@@ -275,14 +275,14 @@
           %tr
             %td=m.text_field :training_institution,:size=>cramped_field_width
             %td=m.text_field :training_course,:size=>cramped_field_width
-            %td=m.text_field :training_start_date,:size=>date_width
-            %td=m.text_field :training_stop_date,:size=>date_width
+            %td=m.text_field :training_start_date,:size=>date_width,:class=>"datepicker"
+            %td=m.text_field :training_stop_date,:size=>date_width,:class=>"datepicker"
             %td=m.text_field :training_hours,:size=>date_width
           %tr
             %td=m.text_field :training_institution_2,:size=>cramped_field_width
             %td=m.text_field :training_course_2,:size=>cramped_field_width
-            %td=m.text_field :training_start_date_2,:size=>date_width
-            %td=m.text_field :training_stop_date_2,:size=>date_width
+            %td=m.text_field :training_start_date_2,:size=>date_width,:class=>"datepicker"
+            %td=m.text_field :training_stop_date_2,:size=>date_width,:class=>"datepicker"
             %td=m.text_field :training_hours_2,:size=>date_width
     #certification.form_block
       .form_block_header

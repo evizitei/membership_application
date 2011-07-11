@@ -15,5 +15,8 @@ function dialog_init(){
 }
 
 function date_selector_init(){
-  $(".datepicker").datepicker();
+  $(".datepicker").datepicker({
+  			changeMonth: true,
+  			changeYear: true
+  		});
 }
