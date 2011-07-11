@@ -185,6 +185,7 @@ DEPENDENCIES
   fakeweb
   haml
   launchy
+  mocha
   nifty-generators
   paperclip
   pdfkit

@@ -30,4 +30,5 @@ group :development,:test do
   gem 'fakeweb'
   gem 'timecop'
   gem "nifty-generators"
+  gem "mocha"
 end
