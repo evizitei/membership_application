@@ -47,7 +47,7 @@
           =m.select :address_state,options_for_select(State.short_names)
         .last_form_cell{:style=>"width:19%;"}
           =m.label :zip,"(Zip)"
-          =m.text_field :zip,:size=>5
+          =m.text_field :zip,:size=>5,:class=>"zip_input"
       .form_row
         .form_cell{:style=>"width:50%;"}
           =m.label :phone_number,"Telephone Number: (Primary)"
