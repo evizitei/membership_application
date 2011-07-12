@@ -224,12 +224,9 @@
         %thead
           %tr
             %th{:style=>"text-align:center;"}
-              %span Institution 
-              ="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;".html_safe
-              ="--" 
-              ="&nbsp;".html_safe
-              %span Location
-              ="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;".html_safe
+              Institution/
+              %br
+              Location (City, State)
             %th From Date
             %th To Date
             %th Units
@@ -240,7 +237,6 @@
           %tr
             %td.centered
               =m.text_field :college_name,:size=>cramped_field_width
-              ="--"
               =m.text_field :college_location,:size=>cramped_field_width
             %td=m.text_field :college_start_date,:size=>date_width,:class=>"datepicker"
             %td=m.text_field :college_stop_date,:size=>date_width,:class=>"datepicker"
@@ -251,7 +247,6 @@
           %tr
             %td.centered
               =m.text_field :college_name_2,:size=>cramped_field_width
-              ="--"
               =m.text_field :college_location_2,:size=>cramped_field_width
             %td=m.text_field :college_start_date_2,:size=>date_width,:class=>"datepicker"
             %td=m.text_field :college_stop_date_2,:size=>date_width,:class=>"datepicker"
@@ -262,7 +257,6 @@
           %tr
             %td.centered
               =m.text_field :college_name_3,:size=>cramped_field_width
-              ="--"
               =m.text_field :college_location_3,:size=>cramped_field_width
             %td=m.text_field :college_start_date_3,:size=>date_width,:class=>"datepicker"
             %td=m.text_field :college_stop_date_3,:size=>date_width,:class=>"datepicker"
@@ -276,20 +270,29 @@
       %table
         %thead
           %tr
-            %th Institution - Business or Trade School
+            %th{:style=>"text-align:center;"} 
+              Institution - Business or Trade School/
+              %br
+              Location (City, State)
             %th Course
             %th From Date
             %th To Date
             %th Hours Completed
         %tbody
           %tr
-            %td=m.text_field :training_institution,:size=>cramped_field_width
+            %td
+              =m.text_field :training_institution
+              %br
+              =m.text_field :training_location
             %td=m.text_field :training_course,:size=>cramped_field_width
             %td=m.text_field :training_start_date,:size=>date_width,:class=>"datepicker"
             %td=m.text_field :training_stop_date,:size=>date_width,:class=>"datepicker"
             %td=m.text_field :training_hours,:size=>date_width
           %tr
-            %td=m.text_field :training_institution_2,:size=>cramped_field_width
+            %td
+              =m.text_field :training_institution_2
+              %br
+              =m.text_field :training_location_2
             %td=m.text_field :training_course_2,:size=>cramped_field_width
             %td=m.text_field :training_start_date_2,:size=>date_width,:class=>"datepicker"
             %td=m.text_field :training_stop_date_2,:size=>date_width,:class=>"datepicker"
@@ -304,7 +307,10 @@
             %th License/Certifications
             %th License Number
             %th Issued By
-            %th Expiration Date
+            %th 
+              Expiration Date 
+              %br
+              (mm/dd/yyyy)
         %tbody
           %tr
             %td=m.text_field :certification_name,:size=>cramped_field_width
@@ -323,42 +329,59 @@
             %td=m.text_field :certification_expiration_3,:size=>date_width,:class=>"datepicker"
     #previous_experience.form_block
       .form_block_header 
-        .main Pervious Fire Service/EMS Experience
+        .main Previous Fire Service/EMS Experience
       %table
         %thead
           %tr
-            %th Department
-            %th City
-            %th State
+            %th{:style=>"text-align:center;"}
+              Department/
+              %br
+              City, State
             %th Phone
-            %th Contact Name -- Contact Phone
-            %th Highest Rank -- Years of Service
+            %th 
+              Contact Name/
+              %br
+              Contact Phone
+            %th 
+              Highest Rank/
+              %br
+              Years of Service
         %tbody
           %tr
-            %td=m.text_field :previous_fire_department,:size=>49
-            %td=m.text_field :previous_fire_city,:size=>cramped_field_width
-            %td=m.text_field :previous_fire_state,:size=>2
+            %td
+              =m.text_field :previous_fire_department,:size=>49
+              %br
+              %br
+              =m.text_field :previous_fire_city,:size=>cramped_field_width
+              =m.text_field :previous_fire_state,:size=>2
             %td=m.text_field :previous_fire_phone,:size=>date_width,:class=>"phone_input"
             %td
-              =m.text_field :previous_fire_contact_name,:size=>date_width
-              ="--"
+              =m.text_field :previous_fire_contact_name,:size=>14
+              %br
+              %br
               =m.text_field :previous_fire_contact_phone,:size=>14,:class=>"phone_input"
             %td
               =m.text_field :previous_fire_rank,:size=>date_width
-              ="--"
+              %br
+              %br
               =m.text_field :previous_fire_years,:size=>date_width
           %tr
-            %td=m.text_field :previous_fire_department_2,:size=>49
-            %td=m.text_field :previous_fire_city_2,:size=>cramped_field_width
-            %td=m.text_field :previous_fire_state_2,:size=>2
+            %td
+              =m.text_field :previous_fire_department_2,:size=>49
+              %br
+              %br
+              =m.text_field :previous_fire_city_2,:size=>cramped_field_width
+              =m.text_field :previous_fire_state_2,:size=>2
             %td=m.text_field :previous_fire_phone_2,:size=>date_width,:class=>"phone_input"
             %td
-              =m.text_field :previous_fire_contact_name_2,:size=>date_width
-              ="--"
+              =m.text_field :previous_fire_contact_name_2,:size=>14
+              %br
+              %br
               =m.text_field :previous_fire_contact_phone_2,:size=>14,:class=>"phone_input"
             %td
               =m.text_field :previous_fire_rank_2,:size=>date_width
-              ="--"
+              %br
+              %br
               =m.text_field :previous_fire_years_2,:size=>date_width
     #references.form_block
       .form_block_header{:style=>"border-bottom: 1px solid black;"}
