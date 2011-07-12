@@ -54,9 +54,13 @@
         .form_cell{:style=>"width:50%;"}
           =m.label :phone_number,"Telephone Number: (Primary)"
           =m.text_field :phone_number,:class=>"phone_input"
+          %br
+          %i (999)-999-9999
         .last_form_cell{:style=>"width:49%;"}
           =m.label :phone_number_2,"(Secondary)"
           =m.text_field :phone_number_2,:class=>"phone_input"
+          %br
+          %i (999)-999-9999
       .form_row
         .form_cell{:style=>"width:50%;"}
           =m.label :email,"E-mail:"
@@ -114,20 +118,22 @@
           %p
             %i If you answered 'Yes', explain:
           =m.text_area :traffic_violations_details
+    -employment_field_width = 31
+    -more_cramped_field_width = 18
     #employment_history.form_block
       .form_block_header 
         .main Employment History
       .tall_form_row
         .form_cell{:style=>"width:30%;"}
           =m.label :employer_name,"Name of Employer:"
-          =m.text_field :employer_name,:size=>39
+          =m.text_field :employer_name,:size=>employment_field_width
           =m.label :employer_position_held,"Position Held:"
-          =m.text_field :employer_position_held,:size=>39
+          =m.text_field :employer_position_held,:size=>employment_field_width
         .form_cell{:style=>"width:18%;"}
           =m.label :employer_phone,"Phone:"
-          =m.text_field :employer_phone,:size=>cramped_field_width,:class=>"phone_input"
+          =m.text_field :employer_phone,:size=>more_cramped_field_width,:class=>"phone_input"
           =m.label :employer_location,"Location:"
-          =m.text_field :employer_location,:size=>cramped_field_width
+          =m.text_field :employer_location,:size=>more_cramped_field_width
         .form_cell{:style=>"width:12%;"}
           =m.label :employer_start,"Start:"
           =m.text_field :employer_start,:size=>date_width,:class=>"datepicker"
@@ -139,14 +145,14 @@
       .tall_form_row
         .form_cell{:style=>"width:30%;"}
           =m.label :employer_name_2,"Name of Employer:"
-          =m.text_field :employer_name_2,:size=>39
+          =m.text_field :employer_name_2,:size=>employment_field_width
           =m.label :employer_position_held_2,"Position Held:"
-          =m.text_field :employer_position_held_2,:size=>39
+          =m.text_field :employer_position_held_2,:size=>employment_field_width
         .form_cell{:style=>"width:18%;"}
           =m.label :employer_phone_2,"Phone:"
-          =m.text_field :employer_phone_2,:size=>cramped_field_width,:class=>"phone_input"
+          =m.text_field :employer_phone_2,:size=>more_cramped_field_width,:class=>"phone_input"
           =m.label :employer_location_2,"Location:"
-          =m.text_field :employer_location_2,:size=>cramped_field_width
+          =m.text_field :employer_location_2,:size=>more_cramped_field_width
         .form_cell{:style=>"width:12%;"}
           =m.label :employer_start_2,"Start:"
           =m.text_field :employer_start_2,:size=>date_width,:class=>"datepicker"
@@ -158,14 +164,14 @@
       .tall_form_row
         .form_cell{:style=>"width:30%;"}
           =m.label :employer_name_3,"Name of Employer:"
-          =m.text_field :employer_name_3,:size=>39
+          =m.text_field :employer_name_3,:size=>employment_field_width
           =m.label :employer_position_held_3,"Position Held:"
-          =m.text_field :employer_position_held_3,:size=>39
+          =m.text_field :employer_position_held_3,:size=>employment_field_width
         .form_cell{:style=>"width:18%;"}
           =m.label :employer_phone_3,"Phone:"
-          =m.text_field :employer_phone_3,:size=>cramped_field_width,:class=>"phone_input"
+          =m.text_field :employer_phone_3,:size=>more_cramped_field_width,:class=>"phone_input"
           =m.label :employer_location_3,"Location:"
-          =m.text_field :employer_location_3,:size=>cramped_field_width
+          =m.text_field :employer_location_3,:size=>more_cramped_field_width
         .form_cell{:style=>"width:12%;"}
           =m.label :employer_start_3,"Start:"
           =m.text_field :employer_start_3,:size=>date_width,:class=>"datepicker"
@@ -206,9 +212,11 @@
           =m.text_field :high_school_state,:size=>2
         .last_form_cell{:style=>"width:25%;"}
           =m.label :high_school_graduation_date,"Date Graduated:"
-          =m.text_field :high_school_graduation_date,:size=>date_width,:class=>"datepicker"
+          (mm/yyyy)
+          =m.text_field :high_school_graduation_date,:size=>date_width,:class=>"month_year_input"
           =m.label :high_school_ged_date,"Date of GED:"
-          =m.text_field :high_school_ged_date,:size=>date_width,:class=>"datepicker"
+          (mm/yyyy)
+          =m.text_field :high_school_ged_date,:size=>date_width,:class=>"month_year_input"
     #college.form_block
       .form_block_header
         .main College/University

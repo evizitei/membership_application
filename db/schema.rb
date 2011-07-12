@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110711203053) do
+ActiveRecord::Schema.define(:version => 20110712185322) do
 
   create_table "delayed_jobs", :force => true do |t|
     t.integer  "priority",   :default => 0
@@ -56,8 +56,8 @@ ActiveRecord::Schema.define(:version => 20110711203053) do
     t.string   "high_school_name"
     t.string   "high_school_city"
     t.string   "high_school_state"
-    t.date     "high_school_graduation_date"
-    t.date     "high_school_ged_date"
+    t.string   "high_school_graduation_date"
+    t.string   "high_school_ged_date"
     t.text     "any_additional_details"
     t.boolean  "is_interested_in_residency"
     t.boolean  "has_fire_experience"
