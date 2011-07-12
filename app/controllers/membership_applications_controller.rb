@@ -3,7 +3,7 @@ class MembershipApplicationsController < ApplicationController
   
   def new
     @position = Position.find(params[:position_id])
-    @membership_application = MembershipApplication.new(:position=>@position)
+    @membership_application = MembershipApplication.new(:position=>@position,:address_state=>"MO")
     if params[:copy_from]
       copy_app = MembershipApplication.find(params[:copy_from])
       @membership_application.attributes = copy_app.attributes

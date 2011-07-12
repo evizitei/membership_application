@@ -25,4 +25,5 @@ function date_selector_init(){
 function format_fields_init(){
   $(".phone_input").mask("(999) 999-9999");
   $(".zip_input").mask("99999");
+  $(".ssn_input").mask("999-99-9999");
 }

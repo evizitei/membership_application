@@ -34,17 +34,19 @@
           =m.text_field :middle_initial,:size=>1
         .last_form_cell{:style=>"width:29%;"}
           =m.label :social_security_number,"Social Security Number"
-          =m.text_field :social_security_number,:size=>standard_field_width
+          =m.text_field :social_security_number,:size=>standard_field_width,:class=>"ssn_input"
+          %br
+          %i 999-99-9999
       .form_row
         .form_cell{:style=>"width:39%;"}
           =m.label :address,"Address: (Street)"
-          =m.text_field :address,:size=>wide_field_width
+          =m.text_field :address,:size=>42
         .form_cell{:style=>"width:30%;"}
           =m.label :city,"(City)"
           =m.text_field :city,:size=>standard_field_width
         .form_cell{:style=>"width:10%;"}
           =m.label :address_state,"(State)"
-          =m.select :address_state,options_for_select(State.short_names)
+          =m.select :address_state,State.short_names
         .last_form_cell{:style=>"width:19%;"}
           =m.label :zip,"(Zip)"
           =m.text_field :zip,:size=>5,:class=>"zip_input"
