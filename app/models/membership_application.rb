@@ -44,6 +44,11 @@ class MembershipApplication < ActiveRecord::Base
     end
   end
 
+  def initialize(options={})
+    super({})
+    self.address_state ||= "MO"
+  end
+
   def applicant_name
     "#{first_name} #{last_name}"
   end

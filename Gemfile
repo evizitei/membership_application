@@ -11,6 +11,7 @@ gem 'pdfkit'
 gem "aws-s3"
 gem "paperclip"
 gem "delayed_job"
+gem "rack-ssl"
 
 gem 'pg', :group => :production
 
@@ -29,4 +30,5 @@ group :development,:test do
   gem 'fakeweb'
   gem 'timecop'
   gem "nifty-generators"
+  gem "mocha"
 end

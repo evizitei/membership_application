@@ -346,23 +346,35 @@
           %th City
           %th State
           %th Phone
-          %th Highest Rank
-          %th Years of Service
+          %th Contact Name -- Contact Phone
+          %th Highest Rank -- Years of Service
       %tbody
         %tr
           %td=app.previous_fire_department or "N/A"
           %td=app.previous_fire_city
           %td=app.previous_fire_state
           %td=app.previous_fire_phone
-          %td=app.previous_fire_rank
-          %td=app.previous_fire_years
+          %td
+            =app.previous_fire_contact_name
+            ="--"
+            =app.previous_fire_contact_phone
+          %td
+            =app.previous_fire_rank
+            ="--"
+            =app.previous_fire_years
         %tr
           %td=app.previous_fire_department_2 or "N/A"
           %td=app.previous_fire_city_2
           %td=app.previous_fire_state_2
           %td=app.previous_fire_phone_2
-          %td=app.previous_fire_rank_2
-          %td=app.previous_fire_years_2
+          %td
+            =app.previous_fire_contact_name_2
+            ="--"
+            =app.previous_fire_contact_phone_2
+          %td
+            =app.previous_fire_rank_2
+            ="--"
+            =app.previous_fire_years_2
   #references.form_block
     .form_block_header{:style=>"border-bottom: 1px solid black;"}
       .main References

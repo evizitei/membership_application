@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110629023411) do
+ActiveRecord::Schema.define(:version => 20110712194645) do
 
   create_table "delayed_jobs", :force => true do |t|
     t.integer  "priority",   :default => 0
@@ -56,8 +56,8 @@ ActiveRecord::Schema.define(:version => 20110629023411) do
     t.string   "high_school_name"
     t.string   "high_school_city"
     t.string   "high_school_state"
-    t.date     "high_school_graduation_date"
-    t.date     "high_school_ged_date"
+    t.string   "high_school_graduation_date"
+    t.string   "high_school_ged_date"
     t.text     "any_additional_details"
     t.boolean  "is_interested_in_residency"
     t.boolean  "has_fire_experience"
@@ -152,6 +152,7 @@ ActiveRecord::Schema.define(:version => 20110629023411) do
     t.string   "previous_fire_phone_2"
     t.string   "previous_fire_rank_2"
     t.string   "previous_fire_years_2"
+    t.string   "drivers_license_class"
     t.boolean  "interested_in_residency"
     t.string   "known_firefighter_name"
     t.string   "known_firefighter_station"
@@ -173,7 +174,6 @@ ActiveRecord::Schema.define(:version => 20110629023411) do
     t.string   "reference_name_4"
     t.string   "reference_phone_4"
     t.string   "reference_relationship_4"
-    t.string   "drivers_license_class"
     t.string   "encrypted_social_security_number"
     t.string   "printable_pdf_file_name"
     t.string   "printable_pdf_content_type"
@@ -185,6 +185,12 @@ ActiveRecord::Schema.define(:version => 20110629023411) do
     t.string   "employer_location"
     t.string   "employer_location_2"
     t.string   "employer_location_3"
+    t.string   "previous_fire_contact_name"
+    t.string   "previous_fire_contact_name_2"
+    t.string   "previous_fire_contact_phone"
+    t.string   "previous_fire_contact_phone_2"
+    t.string   "training_location"
+    t.string   "training_location_2"
   end
 
   create_table "positions", :force => true do |t|
