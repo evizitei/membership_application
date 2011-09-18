@@ -39,7 +39,7 @@ class MembershipApplication < ActiveRecord::Base
     end
     
     def undownloaded
-      where("downloaded = ? or downloaded IS NULl")
+      where(["downloaded = ? or downloaded IS NULL", false])
     end
     
     def for_ssn(ssn)
