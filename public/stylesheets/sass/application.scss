@@ -85,6 +85,7 @@ div#header{
 @mixin cellish {
   padding-left: $standard_padding;
   padding-top: $standard_padding;
+  word-wrap: break-word;
   height: 97%;
   label{
     display:block;
