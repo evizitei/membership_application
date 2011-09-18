@@ -5,4 +5,4 @@
     = link_to "web",position_membership_application_path(@position, application)
     -if application.printable_pdf.exists?
       = "--"
-      = link_to "PDF", download_application_path(application)
+      = link_to "PDF", download_application_path(:id=>application)
