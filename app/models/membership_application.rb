@@ -38,6 +38,10 @@ class MembershipApplication < ActiveRecord::Base
       where(:state=>"submitted")
     end
     
+    def undownloaded
+      where("downloaded = ? or downloaded IS NULl")
+    end
+    
     def for_ssn(ssn)
       ssn = ssn.gsub(/[\s|-]+/,"")
       find_all_by_social_security_number(ssn)
@@ -58,6 +62,10 @@ class MembershipApplication < ActiveRecord::Base
     pdf = create_pdf_from(html)
     self.printable_pdf = pdf
     self.save!
+  end
+  
+  def mark_downloaded!
+    self.update_attributes!(:downloaded => true)
   end
   
 protected 

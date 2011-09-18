@@ -53,7 +53,7 @@ class MembershipApplicationsController < ApplicationController
   
   def index
     @position = Position.find(params[:position_id])
-    @membership_applications = @position.membership_applications
+    @membership_applications = @position.membership_applications.undownloaded
   end
   
   def find
@@ -77,6 +77,12 @@ class MembershipApplicationsController < ApplicationController
     else
       @applications = []
     end
+  end
+  
+  def download
+    @membership_application = MembershipApplication.find(params[:id])
+    @membership_application.mark_downloaded!
+    redirect_to @membership_application.printable_pdf.url
   end
 
 end

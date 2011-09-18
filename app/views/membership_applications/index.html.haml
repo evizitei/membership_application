@@ -2,7 +2,7 @@
 -@membership_applications.each do |application|
   .application_row
     = application.applicant_name
-    = link_to "web",position_membership_application_path(@position,application)
+    = link_to "web",position_membership_application_path(@position, application)
     -if application.printable_pdf.exists?
       = "--"
-      =link_to "PDF",application.printable_pdf.url
+      = link_to "PDF", download_application_path(application)

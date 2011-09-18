@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110712194645) do
+ActiveRecord::Schema.define(:version => 20110918193024) do
 
   create_table "delayed_jobs", :force => true do |t|
     t.integer  "priority",   :default => 0
@@ -152,7 +152,6 @@ ActiveRecord::Schema.define(:version => 20110712194645) do
     t.string   "previous_fire_phone_2"
     t.string   "previous_fire_rank_2"
     t.string   "previous_fire_years_2"
-    t.string   "drivers_license_class"
     t.boolean  "interested_in_residency"
     t.string   "known_firefighter_name"
     t.string   "known_firefighter_station"
@@ -174,6 +173,7 @@ ActiveRecord::Schema.define(:version => 20110712194645) do
     t.string   "reference_name_4"
     t.string   "reference_phone_4"
     t.string   "reference_relationship_4"
+    t.string   "drivers_license_class"
     t.string   "encrypted_social_security_number"
     t.string   "printable_pdf_file_name"
     t.string   "printable_pdf_content_type"
@@ -191,6 +191,7 @@ ActiveRecord::Schema.define(:version => 20110712194645) do
     t.string   "previous_fire_contact_phone_2"
     t.string   "training_location"
     t.string   "training_location_2"
+    t.boolean  "downloaded"
   end
 
   create_table "positions", :force => true do |t|
