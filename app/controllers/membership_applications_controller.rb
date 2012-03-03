@@ -57,8 +57,10 @@ class MembershipApplicationsController < ApplicationController
   end
   
   def find
-    if params[:social_security_number]
-      @applications = MembershipApplication.for_ssn(params[:social_security_number])
+    ssn = params[:social_security_number]
+    if ssn
+      @applications = MembershipApplication.for_ssn ssn
+      @message = "Sorry! No applications found for '#{ssn}'" if @applications.size == 0
     else
       @applications = []
     end

@@ -55,6 +55,7 @@ div#header {
   .form_row .form_cell {
     padding-left: 3px;
     padding-top: 3px;
+    word-wrap: break-word;
     height: 97%;
     float: left;
     border-right: 1px solid black; }
@@ -64,6 +65,7 @@ div#header {
   .form_row .last_form_cell {
     padding-left: 3px;
     padding-top: 3px;
+    word-wrap: break-word;
     height: 97%;
     float: right; }
     .form_row .last_form_cell label {
@@ -88,6 +90,7 @@ div#header {
   .tall_form_row .form_cell {
     padding-left: 3px;
     padding-top: 3px;
+    word-wrap: break-word;
     height: 97%;
     float: left;
     border-right: 1px solid black; }
@@ -97,6 +100,7 @@ div#header {
   .tall_form_row .last_form_cell {
     padding-left: 3px;
     padding-top: 3px;
+    word-wrap: break-word;
     height: 97%;
     float: right; }
     .tall_form_row .last_form_cell label {
@@ -121,6 +125,7 @@ div#header {
   .narrative_form_row .form_cell {
     padding-left: 3px;
     padding-top: 3px;
+    word-wrap: break-word;
     height: 97%;
     float: left;
     border-right: 1px solid black; }
@@ -130,6 +135,7 @@ div#header {
   .narrative_form_row .last_form_cell {
     padding-left: 3px;
     padding-top: 3px;
+    word-wrap: break-word;
     height: 97%;
     float: right; }
     .narrative_form_row .last_form_cell label {
@@ -154,6 +160,7 @@ div#header {
   .table_header_row .form_cell {
     padding-left: 3px;
     padding-top: 3px;
+    word-wrap: break-word;
     height: 97%;
     float: left;
     border-right: 1px solid black; }
@@ -163,6 +170,7 @@ div#header {
   .table_header_row .last_form_cell {
     padding-left: 3px;
     padding-top: 3px;
+    word-wrap: break-word;
     height: 97%;
     float: right; }
     .table_header_row .last_form_cell label {
