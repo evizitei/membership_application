@@ -56,6 +56,12 @@ class MembershipApplicationsController < ApplicationController
     @membership_applications = @position.membership_applications.undownloaded
   end
   
+  def destroy
+    @membership_application = MembershipApplication.find params[:id]
+    @membership_application.destroy
+    redirect_to position_membership_applications_path(:position_id=>params[:position_id])
+  end
+  
   def find
     ssn = params[:social_security_number]
     if ssn

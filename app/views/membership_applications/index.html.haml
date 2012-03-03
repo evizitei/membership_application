@@ -5,4 +5,5 @@
     = link_to "web",position_membership_application_path(@position, application)
     -if application.printable_pdf.exists?
       = "--"
-      = link_to "PDF", download_application_path(:id=>application)
+      = link_to "PDF", download_application_path(:id=>application.id)
+    = button_to "Destroy", position_membership_application_path(@position, application), :method=>:delete, :confirm=>"Are you sure you want to delete this application?"
